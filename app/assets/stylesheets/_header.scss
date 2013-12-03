@@ -1,0 +1,35 @@
+header {
+	z-index: 999;
+	position: absolute;
+	width: 100%;
+	top:0;
+	left: 0;
+	height: 100px;
+	background-color: rgb(111,130,255);
+
+	h1{
+		font-weight: 100;
+		display: inline-block;
+		line-height: 100px;
+	}
+
+	nav {
+		font-size:1.5rem;
+		position: absolute;
+		bottom:0;
+		right:0;
+		display: inline-block;
+		ul {
+			margin: 0;
+			li {
+			}
+			a{
+				padding:0 1em;
+				color:#444;
+			}
+			a:hover {
+				color: #333;
+			}
+		}
+	}
+}

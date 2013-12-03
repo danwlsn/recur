@@ -7,8 +7,28 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+		<div class="page">
+			<h1>Fitness</h1>
+			<nav>
+				<ul>
+					<a href="#">
+						<li>Home</li>
+					</a>
+					<a href="#">
+						<li>About</li>
+					</a>
+					<a href="#">
+						<li>Contact</li>
+					</a>
+				</ul>
+			</nav> <!-- nav -->
+		<div/> <!-- page -->
+	</header> <!-- header -->
+		<div class="page content">
+			<div class="grid">
+				<%= yield %>
+			</div>
+		</div>
 </body>
 </html>
