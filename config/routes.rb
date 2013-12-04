@@ -1,6 +1,17 @@
 Fitness::Application.routes.draw do
 
+  root 'users#index'
+
+  get '/about', to: 'static#about'
+  get '/contact', to: 'static#contact'
+
   resources :users
+  get '/signup', to: 'users#new'
+
+  resources :sessions, only: [:new, :create, :destroy]
+  get '/signin', to: 'sessions#new'
+  delete '/signout', to: 'sessions#delete'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

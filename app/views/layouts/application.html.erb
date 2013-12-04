@@ -2,25 +2,21 @@
 <html>
 <head>
   <title>Fitness</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<header>
 		<div class="page">
-			<h1>Fitness</h1>
+			<%= link_to root_url do %>
+				<h1>Fitness</h1>
+			<% end %>
 			<nav>
 				<ul>
-					<a href="#">
-						<li>Home</li>
-					</a>
-					<a href="#">
-						<li>About</li>
-					</a>
-					<a href="#">
-						<li>Contact</li>
-					</a>
+					<li><%= link_to 'Home',root_url %></li>
+					<li><%= link_to 'About', about_path %></li>
+					<li><%= link_to 'Contact', contact_path %></li>
 				</ul>
 			</nav> <!-- nav -->
 		<div/> <!-- page -->
