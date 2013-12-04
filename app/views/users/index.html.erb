@@ -1,5 +1,8 @@
 <div class="unit span-grid">
 	<h1>Users</h1>
-	<%=link_to 'Signin', signin_path %>
-	<%=link_to 'Signup', signup_path %>
+	<% if signed_in? %>
+		<%=link_to 'Signin', signin_path %>
+		<%=link_to 'Signup', signup_path %>
+	<% else %>
+	<% end %>
 </div>
