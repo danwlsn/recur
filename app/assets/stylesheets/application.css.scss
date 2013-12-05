@@ -1,3 +1,5 @@
+@import "users.css.scss";
+
 // Everything reset
 *, :before, :after {
 	margin: 0;
@@ -59,15 +61,17 @@ nav, nav ul {
 
 // Main
 html {
-	color:#333;
+	color:#383838;
 	font: 100%/1.5 helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
 html, body {
-	min-height: 100%;
+	height: 100%;
 	position: relative;
 }
 .page {
+	position: relative;
+	min-height: 100%;
 	max-width: 960px;
 	margin: 0 auto;
 	padding: 0 30px;
@@ -138,6 +142,10 @@ header {
 	height: 100px;
 	background-color: rgb(111,130,255);
 
+	a:visited{
+		color:#383838;
+	}
+
 	h1 {
 			font-weight: 100;
 			display: inline-block;
@@ -167,21 +175,22 @@ header {
 }
 
 // FOOTER
+.main {
+	padding-bottom:100px;
+}
 footer {
+	position: absolute;
+	padding:0;
+	bottom:0;
+	left:0;
+	width:100%;
 	text-align: right;
-	padding:1.3em 0;
+	padding:1.3em;
+	margin-bottom: 0;
 	border-top: 1px solid #ccc;
 }
 
 // CONTENT
-.unit {
-	background-color: rgb(176,187,255);
-	h2 {
-		text-align: center;
-		padding:.3em 0;
-		font-weight: 100;
-	}
-}
 .content {
 	padding-top: 150px;
 }
@@ -251,4 +260,30 @@ height:250px;
 	.card {
 		height:auto;
 	}
+}
+
+// Forms input
+.general--input {
+	font-size: 22px;
+	font-weight: 100;
+	padding:0.8em 0;
+	margin-bottom: 20px;
+	text-align: center;
+	display: block;
+	width:100%;
+	border: 1px solid #383838;
+}
+
+.submit--button {
+	font-size: 22px;
+	font-weight: 100;
+	width:100%;
+	padding:1em 0;
+	background-color: #444;
+	color:#fff;
+	border: 0 none;
+}
+.submit--button:hover {
+	background-color:rgb(111,130,255);
+	color: #fff;
 }

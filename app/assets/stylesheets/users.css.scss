@@ -1,3 +1,62 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// INDEX
+.main {
+	h1,h2 {
+		text-align: center;
+	}
+	h1 {
+		font-weight: 500;
+		font-size: 90px;
+		margin-bottom: 0;
+	}
+	.tag--line {
+		font-weight: 100;
+		font-size: 30px;
+	}
+	.center {
+		text-align: center;
+	}
+	.button {
+		display: inline-block;
+		text-align: center;
+		text-decoration: none;
+		font-size: 30px;
+		padding:0.5em 1em;
+		border: 3px solid #383838;
+		color:#383838;
+		margin:0 50px;
+		-webkit-transition:all 0.2s;
+		-moz-transition:all 0.2s;
+		-o-transition:all 0.2s;
+		-ms-transition:all 0.2s;
+		transition:all 0.2s;
+	}
+	.button:hover {
+		background-color:rgb(111,130,255);
+		border: 3px solid rgb(111,130,255);
+		color:#fff;
+	}
+
+	.form {
+		width:400px;
+		margin: 0 auto;
+		text-align: center;
+
+		input {
+			width:100%;
+			-webkit-transition:all 0.2s;
+			-moz-transition:all 0.2s;
+			-o-transition:all 0.2s;
+			-ms-transition:all 0.2s;
+			transition:all 0.2s;
+		}
+
+		h2 {
+			font-weight: 200;
+			font-size: 40px;
+		}
+	}
+}

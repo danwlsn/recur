@@ -1,17 +1,18 @@
-<div class="unit span-gird">
+<div class="form">
+	<h2>Welcome</h2>
 	<%= form_for (@user) do |u| %>
-		<%= u.label :name %>
-		<%= u.text_field :name %><br>
+		<!-- <%= u.label :name %> -->
+		<%= u.text_field :name, class: 'general--input', :placeholder => "Full name" %>
 
-		<%= u.label :email %>
-		<%= u.text_field :email %><br>
+		<!-- <%= u.label :email %> -->
+		<%= u.text_field :email, class: 'general--input', :placeholder => "Email" %>
 
-		<%= u.label :password %>
-		<%= u.text_field :password %><br>
+		<!-- <%= u.label :password %> -->
+		<%= u.text_field :password, class: 'general--input', :placeholder => "Secret password" %>
 
-		<%= u.label :password_confirmation, "Confirmation" %>
-		<%= u.text_field :password_confirmation %><br>
+		<!-- <%= u.label :password_confirmation, "Confirmation" %> -->
+		<%= u.text_field :password_confirmation, class: 'general--input', :placeholder => "Confim secret password" %>
 
-		<%= u.submit "Sign me up" %>
+		<%= u.submit "Sign me up", class: 'submit--button' %>
 	<% end %>
 </div>

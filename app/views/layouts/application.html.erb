@@ -14,7 +14,11 @@
 			<% end %>
 			<nav>
 				<ul>
-					<li><%= link_to 'Home',root_url %></li>
+					<% if signed_in? %>
+						<li><%= link_to 'Profile', user_path(current_user) %></li>
+					<% else %>
+						<li><%= link_to 'Home', root_url %></li>
+					<% end %>
 					<li><%= link_to 'About', about_path %></li>
 					<li><%= link_to 'Contact', contact_path %></li>
 				</ul>
@@ -22,9 +26,12 @@
 		<div/> <!-- page -->
 	</header> <!-- header -->
 		<div class="page content">
-			<div class="grid">
+			<div class="main grid">
 				<%= yield %>
 			</div>
+			<footer>
+				<p><em>Copyright Dan Wilson 2013</em></p>
+			</footer>
 		</div>
 </body>
 </html>

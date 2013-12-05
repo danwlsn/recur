@@ -1,8 +1,14 @@
 <div class="unit span-grid">
-	<h1>Users</h1>
+	<h1>Fitness</h1>
+	<h2 class="tag--line"><em>Witty tag line here</em></h2>
 	<% if signed_in? %>
-		<%=link_to 'Signin', signin_path %>
-		<%=link_to 'Signup', signup_path %>
+		<div class="center">
+			<%= link_to 'Sign out', signout_path, method: "delete", class: 'button' %>
+		</div>
 	<% else %>
+		<div class="center">
+			<%=link_to 'Sign in', signin_path, class: 'button' %>
+			<%=link_to 'Signup', signup_path, class: 'button' %>
+		</div>
 	<% end %>
 </div>
