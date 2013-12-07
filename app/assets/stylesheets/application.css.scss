@@ -132,6 +132,9 @@ html, body {
 	}
 }
 
+$blue: rgba(111,130,255,0.7);
+$lightblue: rgba(111,130,255,0.4);
+
 // HEADER
 header {
 	z-index: 999;
@@ -140,10 +143,27 @@ header {
 	top:0;
 	left: 0;
 	height: 100px;
-	background-color: rgb(111,130,255);
+	background-color: $blue;
 
+	a{
+		text-decoration: none;
+		color:#383838;
+		-webkit-transition:all 0.2s ease-in-out;
+		-moz-transition:all 0.2s ease-in-out;
+		-o-transition:all 0.2s ease-in-out;
+		-ms-transition:all 0.2s ease-in-out;
+		transition:all 0.2s ease-in-out;
+	}
 	a:visited{
 		color:#383838;
+	}
+	a:hover {
+		color:#282828;
+		-webkit-transform:scale(1.2);
+		-moz-transform:scale(1.2);
+		-o-transform:scale(1.2);
+		-ms-transform:scale(1.2);
+		transform:scale(1.2);
 	}
 
 	h1 {
@@ -161,14 +181,7 @@ header {
 		ul {
 			margin: 0;
 			li {
-			}
-			a{
-				text-decoration: none;
 				padding:0 1em;
-				color:#444;
-			}
-			a:hover {
-				color: #333;
 			}
 		}
 	}
@@ -195,7 +208,7 @@ footer {
 	padding-top: 150px;
 }
 .card {
-height:250px;
+	height:250px;
 	overflow: auto;
 }
 .weight--card {
@@ -284,6 +297,6 @@ height:250px;
 	border: 0 none;
 }
 .submit--button:hover {
-	background-color:rgb(111,130,255);
+	background-color:$blue;
 	color: #fff;
 }

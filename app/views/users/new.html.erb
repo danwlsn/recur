@@ -8,10 +8,10 @@
 		<%= u.text_field :email, class: 'general--input', :placeholder => "Email" %>
 
 		<!-- <%= u.label :password %> -->
-		<%= u.text_field :password, class: 'general--input', :placeholder => "Secret password" %>
+		<%= u.password_field :password, class: 'general--input', :placeholder => "Secret password" %>
 
 		<!-- <%= u.label :password_confirmation, "Confirmation" %> -->
-		<%= u.text_field :password_confirmation, class: 'general--input', :placeholder => "Confim secret password" %>
+		<%= u.password_field :password_confirmation, class: 'general--input', :placeholder => "Confim secret password" %>
 
 		<%= u.submit "Sign me up", class: 'submit--button' %>
 	<% end %>

@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$blue: rgba(111,130,255,0.7);
+$lightblue: rgba(111,130,255,0.4);
+
 // INDEX
 .main {
 	h1,h2 {
@@ -35,9 +38,8 @@
 		transition:all 0.2s;
 	}
 	.button:hover {
-		background-color:rgb(111,130,255);
-		border: 3px solid rgb(111,130,255);
-		color:#fff;
+		background-color:$blue;
+		border: 3px solid $blue;
 	}
 
 	.form {
