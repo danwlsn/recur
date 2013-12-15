@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
+		@weight = current_user.weights.build
 	end
 
 	def create

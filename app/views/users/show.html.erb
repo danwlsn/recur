@@ -1,3 +1,12 @@
 <div class="unit span-grid">
 	<h1><%= @user.name %></h1>
+	<h2>Current : <%=@user.weights.last.current_weight%>lbs</h2>
+
+	<div class="weight--form">
+		<%= form_for @weight do |f| %>
+			<%= f.text_field :current_weight, placeholder: "Current weight", :value => @user.weights.last.current_weight, class: "general--input"%>
+			<%= f.text_field :goal_weight, placeholder: "Goal weight", :value => @user.weights.last.goal_weight, class: "general--input"%>
+			<%= f.submit "Update", class: "submit--button"%>
+		<% end %>
+	</div>
 </div>
