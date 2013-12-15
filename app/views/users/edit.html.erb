@@ -1,0 +1,14 @@
+<div class="unit span-grid">
+	<h1><%= @user.name %></h1>
+	<div class="form">
+		<h2>Edit your profile</h2>
+		<%= form_for @user do |f| %>
+			<%= f.text_field :name, placeholder: "Full name", class: "general--input" %>
+			<%= f.text_field :email, placeholder: "Email", class: "general--input" %>
+			<%= f.password_field :password, placeholder: "Password", class: "general--input" %>
+			<%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "general--input" %>
+			<%= f.submit "Save changes", class: "submit--button" %>
+		<% end %>
+	</div>
+</div>
+</div>
