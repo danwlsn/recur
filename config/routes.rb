@@ -5,10 +5,12 @@ Fitness::Application.routes.draw do
   get '/about', to: 'static#about'
   get '/contact', to: 'static#contact'
 
-  resources :users
+  resources :users do
+    member do
+      get :weight
+    end
+  end
   get '/signup', to: 'users#new'
-
-  resources :current_weights
 
   resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
