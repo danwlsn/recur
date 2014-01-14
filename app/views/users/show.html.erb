@@ -2,5 +2,6 @@
 	<h1><%= @user.name %></h1>
 	<h2><%=link_to "Edit user" , edit_user_path(current_user)%></h2>
 	<h3><%=link_to "Weight", weight_user_path(current_user)%></h3>
+	<p><%=@current_weight%></p>
 </div>
 </div>
