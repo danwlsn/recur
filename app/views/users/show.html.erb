@@ -1,7 +1,21 @@
 <div class="unit span-grid">
 	<h1><%= @user.name %></h1>
 	<h2><%=link_to "Edit user" , edit_user_path(current_user)%></h2>
-	<h3><%=link_to "Weight", weight_user_path(current_user)%></h3>
-	<p><%=@current_weight%></p>
+	<div class="card unit one-of-three weight--card">
+		<h2><%=link_to "Weight", weight_user_path(current_user)%></h2>
+		<div class="grid inner">
+						<div class="unit one-of-two">
+							<h3>Current Weight</h3>
+							<p><%= @current_weight %> lbs</p>
+						</div> <!-- weight inner left -->
+						<div class="unit one-of-two">
+							<h3>Goal Weight</h3>
+							<p>170lbs</p>
+						</div> <!-- weight inner right -->
+						<div class="unit span-grid graph">
+							<canvas id="myChart" width="220" height="75"></canvas>
+						</div> <!-- weight inner graph -->
+					</div> <!-- weight inner grid -->
+	</div>
 </div>
 </div>

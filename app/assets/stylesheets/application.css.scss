@@ -210,6 +210,12 @@ footer {
 .card {
 	height:250px;
 	overflow: auto;
+	background-color: $lightblue;
+	h2 {
+		text-align: center;
+		padding:.3em 0;
+		font-weight: 100;
+	}
 }
 .weight--card {
 	text-align: center;
