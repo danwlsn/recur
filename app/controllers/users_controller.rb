@@ -34,6 +34,8 @@ class UsersController < ApplicationController
 	end
 
 	def weight
+		@user = User.find(params[:id])
+		@weight = @user.current_weights.last[:weight]
 	end
 
 	private
