@@ -8,7 +8,9 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		@current_weight = @user.current_weights.last[:weight]
+		if @user.current_weights.exists?(:user_id => @user.id)
+			@current_weight = @user.current_weights.last
+		end
 	end
 
 	def create
@@ -36,7 +38,7 @@ class UsersController < ApplicationController
 
 	def weight
 		@user = User.find(params[:id])
-		@current_weight = @user.current_weights.last[:weight]
+		@current_weight = current_user.current_weights.build
 	end
 
 	private

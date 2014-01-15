@@ -4,7 +4,7 @@
 	<div class="grid inner">
 		<div class="unit one-of-two">
 			<h3>Current Weight</h3>
-			<p><%= @user.current_weights.last[:weight] %> lbs</p>
+			<p><%= @weight[:weight] %> lbs</p>
 		</div>
 		<div class="unit one-of-two">
 			<h3>Goal Weight</h3>
@@ -13,8 +13,8 @@
 	</div>
 </div>
 <div class="unit one-of-two card">
-	<%= form_for(@current_weight) do |f| %>
-	Current weight: <%= f.text_field :weight %>
-	<%= f.submit %>
-<% end %>
+	<%= form_for :current_weight do |f| %>
+		Current weight: <%= f.text_field :weight %>
+		<%= f.submit %>
+	<% end %>
 </div>

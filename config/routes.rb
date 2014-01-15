@@ -12,6 +12,8 @@ Fitness::Application.routes.draw do
   end
   get '/signup', to: 'users#new'
 
+  resources :current_weights
+
   resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'
   delete '/signout', to: 'sessions#destroy'
