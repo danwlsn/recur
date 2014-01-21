@@ -1,5 +1,7 @@
 <div class="unit span-grid">
-	<h1><%= @user.name %></h1>
+	<% if flash[:error] %>
+  	<div class="error"><p><%= flash[:error] %></p></div>
+	<% end %>
 	<div class="form">
 		<h2>Edit your profile</h2>
 		<%= form_for @user do |f| %>

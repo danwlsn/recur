@@ -1,8 +1,8 @@
-<div class="unit span-grid">
-	<h1><%= @user.name %></h1>
-	<h2><%=link_to "Edit user" , edit_user_path(current_user)%></h2>
+	<% if flash[:success] %>
+  	<div class="success"><p><%= flash[:success] %></p></div>
+	<% end %>
 	<div class="card unit one-of-three weight--card">
-		<h2><%=link_to "Weight", current_weight_path(@current_weight)%></h2>
+		<h2><%=link_to "Weight", weight_user_path(current_user)%></h2>
 		<div class="grid inner">
 			<div class="unit one-of-two">
 				<h3>Current Weight</h3>
@@ -16,6 +16,5 @@
 				<canvas id="myChart" width="220" height="75"></canvas>
 			</div> <!-- weight inner graph -->
 		</div> <!-- weight inner grid -->
-	</div>
-</div>
+	</div> <!-- weight card -->
 </div>

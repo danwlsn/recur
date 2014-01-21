@@ -1,4 +1,7 @@
-<h2>Weight</h2>
+<% flash.each do |key, value| %>
+	<div class="flash <%= key %>"><%= value %></div>
+<% end %>
+<h2 class="unit span-grid">Weight</h2>
 <div class="unit one-of-two card weight--card">
 	<h2>Weight</h2>
 	<div class="grid inner">
@@ -12,9 +15,17 @@
 		</div>
 	</div>
 </div>
-<div class="unit one-of-two card">
-	<%= form_for(@current_weight) do |f| %>
-	Current weight: <%= f.text_field :weight %>
-	<%= f.submit %>
-<% end %>
+<div class="unit one-of-two card edit--card">
+	<h2>Update</h2>
+	<div class="grid inner">
+		<div class="unit one-of-two">
+			<%= form_for(@current_weight) do |f| %>
+			<h3>Current Weight</h3>
+			<%= f.text_field :weight, class: "general--input" %>
+			<%= f.submit "Update Current Weight", class: "submit--button" %>
+			<% end %>
+		</div>
+		<div class="unit one-of-two">
+		</div>
+	</div>
 </div>

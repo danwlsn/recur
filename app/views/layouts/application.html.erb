@@ -15,7 +15,11 @@
 			<nav>
 				<ul>
 					<% if signed_in? %>
-						<li><%= link_to 'Profile', user_path(current_user) %></li>
+						<li><%= link_to current_user.name, user_path(current_user) %>
+							<ul class='submenu'>
+								<li><%=link_to "Edit" , edit_user_path(current_user)%></li>
+								<li><%= link_to 'Sign out', signout_path, method: "delete"%></li>
+							</ul></li>
 					<% else %>
 						<li><%= link_to 'Home', root_url %></li>
 					<% end %>

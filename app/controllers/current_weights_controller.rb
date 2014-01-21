@@ -3,7 +3,8 @@ class CurrentWeightsController < ApplicationController
 	def create
 		@current_weight = current_user.current_weights.build(weight_params)
 		if @current_weight.save
-			redirect_to current_user
+			flash[:success] = "Weight updated"
+			redirect_to weight_user_path(current_user)
 		end
 	end
 

@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 	def index
+		if current_user.present?
+			redirect_to user_path(current_user)
+		end
 	end
 
 	def new
@@ -30,8 +33,10 @@ class UsersController < ApplicationController
 	def update
 		@user = User.find(params[:id])
 		if @user.update_attributes(user_params)
+			flash.now[:success] = "Informtion updated"
 			redirect_to @user
 		else
+			flash.now[:error] = "Inccorect email or password"
 			render 'edit'
 		end
 	end
