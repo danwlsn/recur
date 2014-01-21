@@ -13,6 +13,7 @@ Fitness::Application.routes.draw do
   get '/signup', to: 'users#new'
 
   resources :current_weights, only: [:create, :destroy]
+  resources :goal_weights, only: [:create, :destroy]
 
   resources :sessions, only: [:new, :create, :destroy]
   get '/signin', to: 'sessions#new'

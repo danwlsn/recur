@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
 	has_many :current_weights
+	has_many :goal_weights
 
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token

@@ -7,11 +7,11 @@
 	<div class="grid inner">
 		<div class="unit one-of-two">
 			<h3>Current Weight</h3>
-			<p><%= @user.current_weights.last[:weight] %> lbs</p>
+			<p><%= @cw %> lbs</p>
 		</div>
 		<div class="unit one-of-two">
 			<h3>Goal Weight</h3>
-			<p>170 lbs</p>
+			<p><%= @gw %> lbs</p>
 		</div>
 	</div>
 </div>
@@ -26,6 +26,11 @@
 			<% end %>
 		</div>
 		<div class="unit one-of-two">
+			<%= form_for(@goal_weight) do |f| %>
+			<h3>Goal Weight</h3>
+			<%= f.text_field :weight, class: "general--input" %>
+			<%= f.submit "Update Goal Weight", class: "submit--button" %>
+			<% end %>
 		</div>
 	</div>
 </div>

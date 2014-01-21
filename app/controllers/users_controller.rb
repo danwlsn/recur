@@ -12,7 +12,14 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		if @user.current_weights.exists?(:user_id => @user.id)
-			@current_weight = @user.current_weights.last
+			@current_weight = @user.current_weights.last[:weight]
+		else
+			@current_weight = 0
+		end
+		if @user.goal_weights.exists?(:user_id => @user.id)
+			@goal_weight = @user.goal_weights.last[:weight]
+		else
+			@goal_weight = 0
 		end
 	end
 
@@ -43,7 +50,18 @@ class UsersController < ApplicationController
 
 	def weight
 		@user = User.find(params[:id])
+		if @user.current_weights.exists?(:user_id => @user.id)
+			@cw = @user.current_weights.last[:weight]
+		else
+			@cw = 0
+		end
+		if @user.goal_weights.exists?(:user_id => @user.id)
+			@gw = @user.goal_weights.last[:weight]
+		else
+			@gw = 0
+		end
 		@current_weight = current_user.current_weights.build
+		@goal_weight = current_user.goal_weights.build
 	end
 
 	private
