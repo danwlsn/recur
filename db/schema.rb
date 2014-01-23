@@ -11,10 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121171114) do
+ActiveRecord::Schema.define(version: 20140123145626) do
 
   create_table "current_weights", force: true do |t|
     t.integer  "user_id"
+    t.integer  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "fitness_logs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "activity"
+    t.string   "type"
+    t.integer  "time"
+    t.integer  "reps"
+    t.integer  "sets"
     t.integer  "weight"
     t.datetime "created_at"
     t.datetime "updated_at"

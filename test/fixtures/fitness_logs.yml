@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  activity: MyString
+  type: 
+  time: 1
+  reps: 1
+  sets: 1
+  weight: 1
+
+two:
+  user_id: 1
+  activity: MyString
+  type: 
+  time: 1
+  reps: 1
+  sets: 1
+  weight: 1
