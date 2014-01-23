@@ -27,5 +27,10 @@
 	</div> <!-- goals card -->
 	<div class="card unit two-of-three log--card">
 		<h2>Fitness Log</h2>
+		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
+			<% @user.fitness_logs.each do |fl| %>
+				<%= fl.activity %>
+			<% end %>
+		<% end %>
 	</div>
 </div>
