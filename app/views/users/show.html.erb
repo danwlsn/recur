@@ -31,6 +31,8 @@
 			<% @user.fitness_logs.each do |fl| %>
 				<%= fl.activity %>
 			<% end %>
+		<% else %>
+			<h2>Get to the gym!</h2>
 		<% end %>
 	</div>
 </div>
