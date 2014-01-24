@@ -29,7 +29,11 @@
 		<h2><%=link_to "Fitness Log", log_user_path(current_user)%></h2>
 		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
 			<% @user.fitness_logs.each do |fl| %>
-				<%= fl.activity %>
+				<% if fl.type == "Cardio" %>
+						<%= fl.activity %> - <%= fl.time %> minutes<br>
+				<% else %>
+					<%= fl.activity %> - <%= fl.sets %>*<%= fl.reps %> @ <%= fl.weight %>lbs<br>
+				<% end %>
 			<% end %>
 		<% else %>
 			<h2>Get to the gym!</h2>
