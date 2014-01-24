@@ -68,6 +68,7 @@ class UsersController < ApplicationController
 	end
 
 	def log
+		@fitness_log = current_user.fitness_logs.build
 	end
 
 	private
