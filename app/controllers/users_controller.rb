@@ -67,6 +67,9 @@ class UsersController < ApplicationController
 		@goal_weight = current_user.goal_weights.build
 	end
 
+	def log
+	end
+
 	private
 
 		def user_params
