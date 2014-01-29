@@ -10,7 +10,22 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
+// = require jquery
+// = require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+	$('.strength').css('display', 'none');
+	$('#fitness_log_type').change(function() {
+		opt = $(this).val();
+		if (opt=="cardio") {
+			$('.cardio').css('display', 'inline-block');
+			$('.strength').css('display', 'none');
+		}
+		else {
+			$('.cardio').css('display', 'none');
+			$('.strength').css('display', 'inline-block');
+		}
+	})
+});

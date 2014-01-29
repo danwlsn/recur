@@ -2,21 +2,21 @@
 	<div class="flash <%= key %>"><%= value %></div>
 <% end %>
 <h2 class="unit span-grid">Fitness log</h2>
-<div class="unit span-grid card">
+<div class="unit span-grid card log--card">
 	<h2>Update</h2>
 	<%= form_for @fitness_log do |f| %>
 		<%= f.label :activity %>
 		<%= f.text_field :activity %><br>
 		<%= f.label :type %>
-		<%= f.text_field :type %><br>
-		<%= f.label :time %>
-		<%= f.text_field :time, value: 0 %><br>
-		<%= f.label :reps %>
-		<%= f.text_field :reps, value: 0 %><br>
-		<%= f.label :sets %>
-		<%= f.text_field :sets, value: 0 %><br>
-		<%= f.label :weight %>
-		<%= f.text_field :weight, value: 0 %><br>
+		<%= select :fitness_log, :type, [ ["Cardio",'cardio'], ["Strength",'strength']], class: 'choice' %><br>
+		<%= f.label :time, class: 'cardio' %>
+		<%= f.text_field :time, value: 0, class: 'cardio' %><br>
+		<%= f.label :reps, class: 'strength' %>
+		<%= f.text_field :reps, value: 0, class: 'strength' %><br>
+		<%= f.label :sets, class: 'strength' %>
+		<%= f.text_field :sets, value: 0, class: 'strength' %><br>
+		<%= f.label :weight, class: 'strength' %>
+		<%= f.text_field :weight, value: 0, class: 'strength' %><br>
 		<%= f.submit "Submit" %>
 	<% end %>
 </div>
