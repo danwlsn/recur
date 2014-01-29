@@ -24,6 +24,10 @@ class UsersController < ApplicationController
 		else
 			@goal_weight = 0
 		end
+		@today = Date.current();
+		if @user.fitness_logs.exists?(:user_id => @user.id)
+			@lastGymVisit = @user.fitness_logs.last[:created_at]
+		end
 	end
 
 	def create

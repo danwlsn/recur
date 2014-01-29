@@ -20,7 +20,11 @@
 	</div> <!-- weight card -->
 	<div class="card unit one-of-three date--card">
 		<h2>Date</h2>
-		<h3><%= Date.current().to_formatted_s(:long_ordinal) %></h3>
+		<h3><%= @today.to_formatted_s(:long_ordinal) %></h3>
+		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
+			<%= @lastGymVisit.to_formatted_s(:long_ordinal) %><br>
+			<%= distance_of_time_in_words(@today,@lastGymVisit) %> since your last visit to the gym.
+		<% end %>
 	</div> <!-- date--card -->
 	<div class="card unit one-of-three goals--card">
 		<h2>Goals</h2>
@@ -29,6 +33,7 @@
 		<h2><%=link_to "Fitness Log", log_user_path(current_user)%></h2>
 		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
 			<% @user.fitness_logs.each do |fl| %>
+				<span class="date"><%= fl.created_at.to_formatted_s(:long_ordinal) %></span><br>
 				<% if fl.type == "Cardio" %>
 						<%= fl.activity %> - <%= fl.time %> minutes<br>
 				<% else %>

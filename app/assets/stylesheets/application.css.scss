@@ -267,14 +267,12 @@ footer {
 }
 
 .date--card {
+	text-align: center;
 	h2 {
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
 	h3 {
-		text-align: center;
-	}
-	.date {
 		text-align: center;
 	}
 }
@@ -310,6 +308,9 @@ footer {
 	display: block;
 	margin: 0 auto 1.5rem auto;
 	padding: 0 1rem;
+	.date {
+		font-weight: 600;
+	}
 }
 
 .edit--card {
