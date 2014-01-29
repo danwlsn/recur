@@ -6,17 +6,26 @@
 	<h2>Update</h2>
 	<%= form_for @fitness_log do |f| %>
 		<%= f.label :activity %>
-		<%= f.text_field :activity %><br>
+		<%= f.text_field :activity, list: 'activities' %>
+		<datalist id="activities">
+			<option value="Bench press">
+			<option value="Deep squat">
+			<option value="Deadlift">
+			<option value="Overhead press">
+			<option value="Bicep curl">
+			<option value="Cycling">
+			<option value="Running">
+		</datalist>
 		<%= f.label :type %>
 		<%= select :fitness_log, :type, [ ["Cardio",'cardio'], ["Strength",'strength']], class: 'choice' %><br>
 		<%= f.label :time, class: 'cardio' %>
-		<%= f.text_field :time, value: 0, class: 'cardio' %><br>
+		<%= f.text_field :time, value: 0, class: 'cardio' %>
 		<%= f.label :reps, class: 'strength' %>
-		<%= f.text_field :reps, value: 0, class: 'strength' %><br>
+		<%= f.text_field :reps, value: 0, class: 'strength' %>
 		<%= f.label :sets, class: 'strength' %>
-		<%= f.text_field :sets, value: 0, class: 'strength' %><br>
+		<%= f.text_field :sets, value: 0, class: 'strength' %>
 		<%= f.label :weight, class: 'strength' %>
-		<%= f.text_field :weight, value: 0, class: 'strength' %><br>
-		<%= f.submit "Submit" %>
+		<%= f.text_field :weight, value: 0, class: 'strength' %>
+		<br><%= f.submit "Submit" %>
 	<% end %>
 </div>
