@@ -1,5 +1,5 @@
 	<% if flash[:success] %>
-  	<div class="success"><p><%= flash[:success] %></p></div>
+		<div class="success"><p><%= flash[:success] %></p></div>
 	<% end %>
 	<div class="card unit one-of-three weight--card">
 		<h2><%=link_to "Weight", weight_user_path(current_user)%></h2>
@@ -32,13 +32,13 @@
 	<div class="card unit two-of-three log--card">
 		<h2><%=link_to "Fitness Log", log_user_path(current_user)%></h2>
 		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
-			<% @user.fitness_logs.each do |fl| %>
-				<span class="date"><%= fl.created_at.to_formatted_s(:long_ordinal) %></span><br>
-				<% if fl.type == "Cardio" %>
-						<%= fl.activity %> - <%= fl.time %> minutes<br>
-				<% else %>
-					<%= fl.activity %> - <%= fl.sets %>*<%= fl.reps %> @ <%= fl.weight %>lbs<br>
-				<% end %>
+			<% @fitnessLog.each do |date, logs| %>
+				<%= date %>
+				<ul>
+					 <% logs.each do |log| %>
+						 <li><%= log.activity %></li>
+					 <% end %>
+				</ul>
 			<% end %>
 		<% else %>
 			<h2>Get to the gym!</h2>

@@ -27,6 +27,7 @@ class UsersController < ApplicationController
 		@today = Date.current();
 		if @user.fitness_logs.exists?(:user_id => @user.id)
 			@lastGymVisit = @user.fitness_logs.last[:created_at]
+			@fitnessLog = FitnessLog.find(:all).group_by { |log| log.created_at.strftime("%d/%m") }
 		end
 	end
 
