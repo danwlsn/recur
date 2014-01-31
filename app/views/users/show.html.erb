@@ -1,5 +1,5 @@
 	<% if flash[:success] %>
-		<div class="success"><p><%= flash[:success] %></p></div>
+		<div class="success unit span-grid"><p><%= flash[:success] %></p></div>
 	<% end %>
 	<div class="card unit one-of-three weight--card">
 		<h2><%=link_to "Weight", weight_user_path(current_user)%></h2>
@@ -22,8 +22,7 @@
 		<h2>Date</h2>
 		<h3><%= @today.to_formatted_s(:long_ordinal) %></h3>
 		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
-			<%= @lastGymVisit.to_formatted_s(:long_ordinal) %><br>
-			<%= distance_of_time_in_words(@today,@lastGymVisit) %> since your last visit to the gym.
+			<%= distance_of_time_in_words(DateTime.now,@lastGymVisit) %> since your last visit to the gym.
 		<% end %>
 	</div> <!-- date--card -->
 	<div class="card unit one-of-three goals--card">
@@ -33,11 +32,18 @@
 		<h2><%=link_to "Fitness Log", log_user_path(current_user)%></h2>
 		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
 			<% @fitnessLog.each do |date, logs| %>
-				<%= date %>
+				<p class="date"><%= date %></p>
 				<ul>
-					 <% logs.each do |log| %>
-						 <li><%= log.activity %></li>
-					 <% end %>
+					<% logs.each do |log| %>
+						<li>
+						<%= log.activity %>
+						<% if log.type == "Cardio" %>
+							<%= log.time %> mins
+						<% else %>
+							<%= log.sets %>*<%= log.reps %> @ <%= log.weight %>lbs
+						<% end %>
+						</li>
+					<% end %>
 				</ul>
 			<% end %>
 		<% else %>
