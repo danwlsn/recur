@@ -1,3 +1,6 @@
+	<% if flash[:error] %>
+		<div class="error"><p><%= flash[:error] %></p></div>
+	<% end %>
 <div class="form">
 	<h2>Welcome back</h2>
 	<%=form_for(:session, url: sessions_path) do |f| %>
