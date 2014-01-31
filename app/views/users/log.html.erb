@@ -9,12 +9,22 @@
 		<%= f.text_field :activity, list: 'activities' %>
 		<datalist id="activities">
 			<option value="Bench press">
+			<option value="Incline bench press">
+			<option value="Dumbbell press">
+			<option value="Incline dumbbell press">
+			<option value="Pec fly">
 			<option value="Deep squat">
+			<option value="Leg press">
+			<option value="Calf press">
 			<option value="Deadlift">
 			<option value="Overhead press">
-			<option value="Bicep curl">
+			<option value="Dumbbell press">
+			<option value="Barbell curl">
+			<option value="Dumbbell curl">
+			<option value="Hammer curl">
 			<option value="Cycling">
 			<option value="Running">
+			<option value="Rowing">
 		</datalist>
 		<%= f.label :type %>
 		<%= select :fitness_log, :type, [ ["Cardio",'cardio'], ["Strength",'strength']], class: 'choice' %><br>
