@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 	has_many :current_weights
 	has_many :goal_weights
 	has_many :fitness_logs
-	has_many :options
+	has_one :option
 
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token

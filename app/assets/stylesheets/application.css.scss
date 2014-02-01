@@ -262,6 +262,13 @@ form {
 	p {
 		margin-bottom: 0;
 	}
+	form {
+		width: 90%;
+		margin: 0 auto;
+		input{
+			font-size: 16px;
+		}
+	}
 }
 .weight--card {
 		.graph {
@@ -364,6 +371,9 @@ form {
 /****************************************
 *						$forms
 *****************************************/
+input[type="radio"] {
+	display: inline-block;
+}
 .general--input {
 	font-size: 22px;
 	font-weight: 100;
@@ -383,6 +393,7 @@ form {
 	background-color: #444;
 	color:#fff;
 	border: 0 none;
+	margin-bottom: 1.5em;
 }
 .submit--button:hover {
 	background-color:$blue;
@@ -437,10 +448,21 @@ form {
 			-ms-transition:all 0.2s;
 			transition:all 0.2s;
 		}
-
 		h2 {
 			font-weight: 200;
 			font-size: 40px;
+		}
+		input[type="radio"] {
+			width: auto;
+			display: inline-block;
+		}
+		p{
+			display: inline-block;
+			font-weight: 200;
+			font-size: 20px;
+		}
+		p+p {
+			margin-left: 1.5em;
 		}
 	}
 }

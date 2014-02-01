@@ -2,10 +2,14 @@
 	<% if flash[:error] %>
   	<div class="error"><p><%= flash[:error] %></p></div>
 	<% end %>
-	<div class="options">
-		<h2>Preferences</h2>
-	</div>
 	<div class="form">
+		<h2>Preferences</h2>
+		<%= form_for @option do |f| %>
+			<p>lbs <%= radio_button("option","weight","lbs") %></p>
+			<p>kgs <%= radio_button("option","weight","kgs") %></p>
+			<%= f.submit "Update Preferences", class: "submit--button" %>
+		<% end %>
+
 		<h2>Edit your profile</h2>
 		<%= form_for @user do |f| %>
 			<%= f.text_field :name, placeholder: "Full name", class: "general--input" %>

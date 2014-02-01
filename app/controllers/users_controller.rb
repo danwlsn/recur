@@ -21,6 +21,8 @@ class UsersController < ApplicationController
 	@user = User.new(user_params)
 	# If save
 	if @user.save
+		@options = @user.create_option(:weight => 'lbs')
+		@options.save
 		sign_in(@user) # sign user in
 		redirect_to @user # bounce them to their page
 	else
@@ -32,6 +34,7 @@ end
 	def show
 		@user = User.find(params[:id]) # Find user
 		@today = Date.current(); # Today's date
+		@weightFormat = @user.option[:weight]
 		# If current weight exsits
 		if @user.current_weights.exists?(:user_id => @user.id)
 			@current_weight = @user.current_weights.last[:weight]
@@ -57,6 +60,7 @@ end
 	def edit
 		# Find user
 		@user = User.find(params[:id])
+		@option = @user.option
 	end
 
 	# Edit user - view
@@ -65,11 +69,12 @@ end
 		@user = User.find(params[:id])
 		# If update success
 		if @user.update_attributes(user_params)
-			flash.now[:success] = "Informtion updated" # Flash messages
+			flash[:success] = "Informtion updated" # Flash messages
 			redirect_to @user # Redirect to their pages
 		else
-			flash.now[:error] = "Inccorect email or password" # Flash error
-			render 'edit' # Show edit page again
+			flash[:error] = "Inccorect email or password" # Flash error
+			# render 'edit' # Show edit page again
+			redirect_to edit_user_path(@user)
 		end
 	end
 
@@ -77,6 +82,7 @@ end
 	def weight
 		# Find users
 		@user = User.find(params[:id])
+		@weightFormat = @user.option[:weight]
 		# If current weight exists
 		if @user.current_weights.exists?(:user_id => @user.id)
 			@cw = @user.current_weights.last[:weight]
