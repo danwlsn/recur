@@ -2,6 +2,9 @@
 	<% if flash[:error] %>
   	<div class="error"><p><%= flash[:error] %></p></div>
 	<% end %>
+	<div class="options">
+		<h2>Preferences</h2>
+	</div>
 	<div class="form">
 		<h2>Edit your profile</h2>
 		<%= form_for @user do |f| %>
