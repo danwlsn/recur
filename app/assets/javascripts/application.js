@@ -16,15 +16,20 @@
 //= require_tree .
 
 $(document).ready(function(){
+/****************************************
+*						$Select hiding on log form
+*****************************************/
+	// Set strength inputs to none
 	$('.strength').css('display', 'none');
+	// On select change..
 	$('#fitness_log_type').change(function() {
-		opt = $(this).val();
-		if (opt=="cardio") {
-			$('.cardio').css('display', 'block');
+		opt = $(this).val(); // Get the values
+		if (opt=="cardio") { // If it's cardio
+			$('.cardio').css('display', 'block'); // Hide strength inputs
 			$('.strength').css('display', 'none');
 		}
 		else {
-			$('.cardio').css('display', 'none');
+			$('.cardio').css('display', 'none'); // Else hide cardio inputs
 			$('.strength').css('display', 'block');
 		}
 	})
