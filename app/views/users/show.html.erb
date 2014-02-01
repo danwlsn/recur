@@ -37,7 +37,7 @@
 					<% logs.each do |log| %>
 						<li>
 						<%= log.activity %>
-						<% if log.type == "Cardio" %>
+						<% if log.type == "cardio" %>
 							<%= log.time %> mins
 						<% else %>
 							<%= log.sets %>*<%= log.reps %> @ <%= log.weight %>lbs
