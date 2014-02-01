@@ -3,6 +3,9 @@
 *****************************************/
 $blue: rgba(111,130,255,0.7);
 $lightblue: rgba(111,130,255,0.4);
+$bodyGray:#484848;
+$linkGray:#444;
+$hoverGray:#282828;
 
 /****************************************
 *						$Resets
@@ -69,7 +72,7 @@ nav, nav ul {
 
 // Main
 html {
-	color:#484848;
+	color:$bodyGray;
 	font: 100%/1.5 helvetica, sans-serif;
 	-webkit-font-smoothing: antialiased;
 }
@@ -146,7 +149,20 @@ html, body {
 *						$anchors
 *****************************************/
 a {
-	transition:all 0.3s ease-in-out;
+	color: $linkGray;
+	text-decoration: none;
+	-webkit-transition:all 0.2s ease-in-out;
+	-moz-transition:all 0.2s ease-in-out;
+	-o-transition:all 0.2s ease-in-out;
+	-ms-transition:all 0.2s ease-in-out;
+	transition:all 0.2s ease-in-out;
+}
+a:visited {
+	color: $linkGray;
+}
+a:hover {
+	color:$hoverGray;
+	text-decoration: none;
 }
 
 /****************************************
@@ -160,34 +176,12 @@ header {
 	left: 0;
 	height: 100px;
 	background-color: $blue;
-
-	a{
-		text-decoration: none;
-		color:#484848;
-		-webkit-transition:all 0.2s ease-in-out;
-		-moz-transition:all 0.2s ease-in-out;
-		-o-transition:all 0.2s ease-in-out;
-		-ms-transition:all 0.2s ease-in-out;
-		transition:all 0.2s ease-in-out;
 	}
-	a:visited{
-		color:#484848;
-	}
-	a:hover {
-		color:#282828;
-		// -webkit-transform:scale(1.2);
-		-moz-transform:scale(1.2);
-		-o-transform:scale(1.2);
-		-ms-transform:scale(1.2);
-		transform:scale(1.2);
-	}
-
 	h1 {
 			font-weight: 100;
 			display: inline-block;
 			line-height: 100px;
 	}
-
 	nav {
 		font-size:1.5rem;
 		position: absolute;
@@ -198,7 +192,6 @@ header {
 			margin: 0;
 			li {
 				padding:0 1em;
-
 				.submenu {
 					display: none;
 					position: absolute;
@@ -207,7 +200,6 @@ header {
 						margin: 0;
 						padding: 0;
 					}
-
 					a{
 						display: block;
 						background-color: $blue;
@@ -221,16 +213,11 @@ header {
 			}
 		}
 	}
-}
 
 /****************************************
 *						$footer
 *****************************************/
-.main {
-	// padding-bottom:100px;
-}
 footer {
-	// position: absolute;
 	padding:0;
 	bottom:0;
 	left:0;
@@ -256,48 +243,43 @@ form {
 *						$cards
 *****************************************/
 .card {
+	text-align: center;
 	height:250px;
 	overflow: hidden;
 	background-color: $lightblue;
 	h2 {
-		text-align: center;
 		padding:.3em 0;
 		font-weight: 100;
 	}
-	a {
-		text-decoration: none;
-		color: #484848;
-	}
-	a:visited{
-		color:#484848;
-	}
-	a:hover {
-		color:#282828;
-	}
-}
-.inner {
 	h3 {
 		margin-bottom: 0;
 	}
+	a:hover {
+		text-decoration: underline;
+	}
+}
+.inner {
 	p {
 		margin-bottom: 0;
 	}
 }
 .weight--card {
-	text-align: center;
 		.graph {
 			margin-bottom: 0;
 		}
 }
 
 .date--card {
-	text-align: center;
 	h2 {
 		margin-bottom: 0;
 		padding-bottom: 0;
 	}
 	h3 {
-		text-align: center;
+		margin-bottom: 1.5em;
+	}
+	p {
+		width:80%;
+		margin: 0 auto;
 	}
 }
 
@@ -328,16 +310,13 @@ form {
 }
 
 .log--card {
-	// min-height:250px;
+	text-align: left;
 	height: auto;
 	display: block;
 	margin: 0 auto 1.5rem auto;
 	padding: 0 1rem;
 	padding-bottom: 1rem;
-	h3 {
-		text-align: center;
-		margin-bottom: 0;
-	}
+
 	.date {
 		font-weight: 600;
 		margin-bottom: 0;
@@ -352,24 +331,6 @@ form {
 		height: 34px;
 		text-align: center;
 		margin-bottom: 1.5em;
-	}
-}
-
-.edit--card {
-	text-align: center;
-	form {
-		width:100%;
-		input, label {
-			display: block;
-			width:90%;
-			margin: 0 auto 0.5em auto;
-			text-align: center;
-			font-size: 16px;
-		}
-		.general--input {
-		}
-		.submit--button {
-		}
 	}
 }
 

@@ -22,7 +22,7 @@
 		<h2>Date</h2>
 		<h3><%= @today.to_formatted_s(:long_ordinal) %></h3>
 		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
-			<%= distance_of_time_in_words(DateTime.now,@lastGymVisit) %> since your last visit to the gym.
+			<p><%= distance_of_time_in_words(DateTime.now,@lastGymVisit) %> since your last visit to the gym.</p>
 		<% end %>
 	</div> <!-- date--card -->
 	<div class="card unit one-of-three goals--card">
