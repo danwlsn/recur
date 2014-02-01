@@ -1,5 +1,12 @@
-@import "users.css.scss";
+/****************************************
+*						$variables
+*****************************************/
+$blue: rgba(111,130,255,0.7);
+$lightblue: rgba(111,130,255,0.4);
 
+/****************************************
+*						$Resets
+*****************************************/
 // Everything reset
 *, :before, :after {
 	margin: 0;
@@ -79,7 +86,9 @@ html, body {
 	padding: 0 1.5rem;
 }
 
-// Grid layout based on toast
+/****************************************
+*						$Grid
+*****************************************/
 .grid {
 	margin-left: -3%;
 	max-width: 105%;
@@ -132,14 +141,17 @@ html, body {
 		display: block;
 	}
 }
+
+/****************************************
+*						$anchors
+*****************************************/
 a {
 	transition:all 0.3s ease-in-out;
 }
 
-$blue: rgba(111,130,255,0.7);
-$lightblue: rgba(111,130,255,0.4);
-
-// HEADER
+/****************************************
+*						$header
+*****************************************/
 header {
 	z-index: 999;
 	position: absolute;
@@ -211,7 +223,9 @@ header {
 	}
 }
 
-// FOOTER
+/****************************************
+*						$footer
+*****************************************/
 .main {
 	// padding-bottom:100px;
 }
@@ -227,7 +241,9 @@ footer {
 	border-top: 1px solid #ccc;
 }
 
-// CONTENT
+/****************************************
+*						$content
+*****************************************/
 .content {
 	padding-top: 150px;
 }
@@ -235,6 +251,10 @@ form {
 	width: 400px;
 	margin: 0 auto;
 }
+
+/****************************************
+*						$cards
+*****************************************/
 .card {
 	height:250px;
 	overflow: hidden;
@@ -362,6 +382,9 @@ form {
 	}
 }
 
+/****************************************
+*						$flashs
+*****************************************/
 .success, .error {
 	text-align: center;
 	color:#eee;
@@ -378,7 +401,9 @@ form {
 	background-color:rgba(255,0,0,0.7);
 }
 
-// Forms input
+/****************************************
+*						$forms
+*****************************************/
 .general--input {
 	font-size: 22px;
 	font-weight: 100;
@@ -402,4 +427,61 @@ form {
 .submit--button:hover {
 	background-color:$blue;
 	color: #fff;
+}
+
+/****************************************
+*						$main
+*****************************************/
+.main {
+	h1,h2 {
+		text-align: center;
+	}
+	h1 {
+		font-weight: 500;
+		font-size: 90px;
+		margin-bottom: 0;
+	}
+	.tag--line {
+		font-weight: 100;
+		font-size: 30px;
+	}
+	.center {
+		text-align: center;
+	}
+	.button {
+		display: inline-block;
+		text-align: center;
+		text-decoration: none;
+		font-size: 30px;
+		padding:0.5em 1em;
+		border: 3px solid #484848;
+		color:#484848;
+		margin:0 50px;
+		-webkit-transition:all 0.2s;
+		-moz-transition:all 0.2s;
+		-o-transition:all 0.2s;
+		-ms-transition:all 0.2s;
+		transition:all 0.2s;
+	}
+	.button:hover {
+		background-color:$blue;
+		border: 3px solid $blue;
+	}
+
+	.form {
+
+		input {
+			width:100%;
+			-webkit-transition:all 0.2s;
+			-moz-transition:all 0.2s;
+			-o-transition:all 0.2s;
+			-ms-transition:all 0.2s;
+			transition:all 0.2s;
+		}
+
+		h2 {
+			font-weight: 200;
+			font-size: 40px;
+		}
+	}
 }
