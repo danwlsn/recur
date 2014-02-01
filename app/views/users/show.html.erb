@@ -36,7 +36,7 @@
 				<ul>
 					<% logs.each do |log| %>
 						<li>
-						<%= log.activity %>
+						<%= log.activity %> -
 						<% if log.type == "cardio" %>
 							<%= log.time %> mins
 						<% else %>
