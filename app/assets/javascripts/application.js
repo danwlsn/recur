@@ -20,12 +20,12 @@ $(document).ready(function(){
 	$('#fitness_log_type').change(function() {
 		opt = $(this).val();
 		if (opt=="cardio") {
-			$('.cardio').css('display', 'inline-block');
+			$('.cardio').css('display', 'block');
 			$('.strength').css('display', 'none');
 		}
 		else {
 			$('.cardio').css('display', 'none');
-			$('.strength').css('display', 'inline-block');
+			$('.strength').css('display', 'block');
 		}
 	})
 });

@@ -49,7 +49,7 @@ end
 			# Get last entry
 			@lastGymVisit = @user.fitness_logs.last[:created_at]
 			# Get log - group by date
-			@fitnessLog = FitnessLog.find(:all, :order => "created_at DESC").group_by { |log| log.created_at.strftime("%d/%m") }
+			@fitnessLog = FitnessLog.where("created_at >= ?", 1.week.ago.utc).order("created_at DESC").group_by { |log| log.created_at.strftime("%d/%m") }
 		end
 	end
 

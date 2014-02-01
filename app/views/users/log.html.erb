@@ -5,8 +5,8 @@
 <div class="unit span-grid card log--card">
 	<h2>Update</h2>
 	<%= form_for @fitness_log do |f| %>
-		<%= f.label :activity %>
-		<%= f.text_field :activity, list: 'activities' %>
+		<h3>Activity</h3>
+		<%= f.text_field :activity, list: 'activities', class: 'general--input' %>
 		<datalist id="activities">
 			<option value="Bench press">
 			<option value="Incline bench press">
@@ -26,16 +26,16 @@
 			<option value="Running">
 			<option value="Rowing">
 		</datalist>
-		<%= f.label :type %>
-		<%= select :fitness_log, :type, [ ["Cardio",'cardio'], ["Strength",'strength']], class: 'choice' %><br>
-		<%= f.label :time, class: 'cardio' %>
-		<%= f.text_field :time, value: 0, class: 'cardio' %>
-		<%= f.label :reps, class: 'strength' %>
-		<%= f.text_field :reps, value: 0, class: 'strength' %>
-		<%= f.label :sets, class: 'strength' %>
-		<%= f.text_field :sets, value: 0, class: 'strength' %>
-		<%= f.label :weight, class: 'strength' %>
-		<%= f.text_field :weight, value: 0, class: 'strength' %>
-		<br><%= f.submit "Submit" %>
+		<h3>Type</h3>
+		<%= select :fitness_log, :type, [ ["Cardio",'cardio'], ["Strength",'strength']], class: 'choice select' %>
+		<h3 class="cardio">Time</h3>
+		<%= f.text_field :time, value: 0, class: 'cardio general--input' %>
+		<h3 class="strength">Reps</h3>
+		<%= f.text_field :reps, value: 0, class: 'strength general--input' %>
+		<h3 class="strength">Sets</h3>
+		<%= f.text_field :sets, value: 0, class: 'strength general--input' %>
+		<h3 class="strength">Weight</h3>
+		<%= f.text_field :weight, value: 0, class: 'strength general--input' %>
+		<%= f.submit "Submit", class: "submit--button" %>
 	<% end %>
 </div>

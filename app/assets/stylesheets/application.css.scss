@@ -5,8 +5,8 @@
 	margin: 0;
 	padding: 0;
 	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
+		 -moz-box-sizing: border-box;
+					box-sizing: border-box;
 	position: relative;
 }
 
@@ -231,6 +231,10 @@ footer {
 .content {
 	padding-top: 150px;
 }
+form {
+	width: 400px;
+	margin: 0 auto;
+}
 .card {
 	height:250px;
 	overflow: hidden;
@@ -310,15 +314,31 @@ footer {
 	margin: 0 auto 1.5rem auto;
 	padding: 0 1rem;
 	padding-bottom: 1rem;
+	h3 {
+		text-align: center;
+		margin-bottom: 0;
+	}
 	.date {
 		font-weight: 600;
 		margin-bottom: 0;
+	}
+	#fitness_log_type {
+		width: 100%;
+		padding: 5px;
+		font-size: 16px;
+		line-height: 1;
+		border: 0;
+		border-radius: 0;
+		height: 34px;
+		text-align: center;
+		margin-bottom: 1.5em;
 	}
 }
 
 .edit--card {
 	text-align: center;
 	form {
+		width:100%;
 		input, label {
 			display: block;
 			width:90%;
@@ -336,6 +356,9 @@ footer {
 @media screen and (max-width: 650px) {
 	.card {
 		height:auto;
+	}
+	form {
+		width: 80%;
 	}
 }
 
