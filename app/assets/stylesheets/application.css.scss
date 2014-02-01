@@ -317,7 +317,6 @@ form {
 }
 
 .log--card {
-	text-align: left;
 	height: auto;
 	display: block;
 	margin: 0 auto 1.5rem auto;
@@ -326,6 +325,9 @@ form {
 	.date {
 		font-weight: 600;
 		margin-bottom: 0;
+	}
+	p, ul {
+		text-align: left;
 	}
 	#fitness_log_type {
 		width: 100%;
@@ -404,9 +406,7 @@ input[type="radio"] {
 *						$main
 *****************************************/
 .main {
-	h1,h2 {
-		text-align: center;
-	}
+	text-align: center;
 	h1 {
 		font-weight: 500;
 		font-size: 90px;

@@ -34,7 +34,12 @@ end
 	def show
 		@user = User.find(params[:id]) # Find user
 		@today = Date.current(); # Today's date
-		@weightFormat = @user.option[:weight]
+		if @user.option
+			@weightFormat = @user.option[:weight]
+		else
+			@user.create_option(:weight => "lbs")
+			@weightFormat = @user.option[:weight]
+		end
 		# If current weight exsits
 		if @user.current_weights.exists?(:user_id => @user.id)
 			@current_weight = @user.current_weights.last[:weight]
