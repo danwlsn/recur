@@ -5,11 +5,11 @@
 <div class="unit one-of-two card weight--card">
 	<h2>Weight</h2>
 	<div class="grid inner">
-		<div class="unit one-of-two">
+		<div class="unit one-of-two cw">
 			<h3>Current Weight</h3>
 			<p><%= @cw %> <%= @weightFormat %></p>
 		</div>
-		<div class="unit one-of-two">
+		<div class="unit one-of-two gw">
 			<h3>Goal Weight</h3>
 			<p><%= @gw %> <%= @weightFormat %></p>
 		</div>
@@ -19,14 +19,14 @@
 	<h2>Update</h2>
 	<div class="grid inner">
 		<div class="unit one-of-two">
-			<%= form_for(@current_weight) do |f| %>
+			<%= form_for @current_weight, :remote => true do |f| %>
 			<h3>Current Weight</h3>
 			<%= f.text_field :weight, class: "general--input" %>
 			<%= f.submit "Update Current Weight", class: "submit--button" %>
 			<% end %>
 		</div>
 		<div class="unit one-of-two">
-			<%= form_for(@goal_weight) do |f| %>
+			<%= form_for@goal_weight, :remote => true do |f| %>
 			<h3>Goal Weight</h3>
 			<%= f.text_field :weight, class: "general--input" %>
 			<%= f.submit "Update Goal Weight", class: "submit--button" %>

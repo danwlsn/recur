@@ -6,7 +6,10 @@ class GoalWeightsController < ApplicationController
 		@goal_weight = current_user.goal_weights.build(weight_params)
 		if @goal_weight.save # If save
 			flash[:success] = "Weight updated"
-			redirect_to weight_user_path(current_user)
+			respond_to do |format|
+				format.html { redirect_to current_user }
+				format.js
+			end
 		end
 	end
 
