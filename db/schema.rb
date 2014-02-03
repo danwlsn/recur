@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140201200821) do
+ActiveRecord::Schema.define(version: 20140203165458) do
 
   create_table "current_weights", force: true do |t|
     t.integer  "user_id"
@@ -35,6 +35,14 @@ ActiveRecord::Schema.define(version: 20140201200821) do
   create_table "goal_weights", force: true do |t|
     t.integer  "user_id"
     t.integer  "weight"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "goals", force: true do |t|
+    t.integer  "user_id"
+    t.string   "goal"
+    t.boolean  "complete",   default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
