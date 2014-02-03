@@ -30,7 +30,7 @@
 		<h2>Goals</h2>
 		<% if @user.goals.exists?(:user_id => @user.id) %>
 			<ul>
-			<% @user.goals.each do |g| %>
+			<% @user.goals.where(:complete => false).each do |g| %>
 					<li>
 						<%= check_box_tag :goals, g.id, g.complete ? true : false %>
 						<label for="<%= g.id %>"><%= g.goal %></label>
