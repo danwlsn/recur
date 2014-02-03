@@ -111,6 +111,10 @@ end
 		@fitness_log = current_user.fitness_logs.build
 	end
 
+	# Goals
+	def goals
+	end
+
 	private
 
 		# Params from forms
