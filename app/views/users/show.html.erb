@@ -27,7 +27,7 @@
 	</div> <!-- date--card -->
 
 	<div class="card unit one-of-three goals--card">
-		<h2>Goals</h2>
+		<h2><%= link_to "Goals", goals_user_path(current_user) %></h2>
 		<% if @user.goals.exists?(:user_id => @user.id) %>
 			<ul>
 			<% @user.goals.where(:complete => false).each do |g| %>

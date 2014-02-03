@@ -118,6 +118,7 @@ end
 
 	# Goals
 	def goals
+		@goal = current_user.goals.build
 	end
 
 	private
