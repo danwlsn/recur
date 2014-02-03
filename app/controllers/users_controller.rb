@@ -59,6 +59,11 @@ end
 			# Get log - group by date
 			@fitnessLog = FitnessLog.where("created_at >= ?", 1.week.ago.utc).order("created_at DESC").group_by { |log| log.created_at.strftime("%A %B #{log.created_at.day.ordinalize}") }
 		end
+		# If has goal
+		if @user.goals.exists?(:user_id => @user.id)
+			# Get goals
+			@goals = @user.goals
+		end
 	end
 
 	# Edit user

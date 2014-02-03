@@ -10,7 +10,6 @@
 			</div> <!-- weight inner left -->
 			<div class="unit one-of-two">
 				<h3>Goal Weight</h3>
-				<% %>
 				<p><%= @goal_weight %> <%= @weightFormat %></p>
 			</div> <!-- weight inner right -->
 			<div class="unit span-grid graph">
@@ -18,6 +17,7 @@
 			</div> <!-- weight inner graph -->
 		</div> <!-- weight inner grid -->
 	</div> <!-- weight card -->
+
 	<div class="card unit one-of-three date--card">
 		<h2>Date</h2>
 		<h3><%= @today.to_formatted_s(:long_ordinal) %></h3>
@@ -25,9 +25,21 @@
 			<p><%= distance_of_time_in_words(DateTime.now,@lastGymVisit) %> since your last visit to the gym.</p>
 		<% end %>
 	</div> <!-- date--card -->
+
 	<div class="card unit one-of-three goals--card">
 		<h2>Goals</h2>
+		<% if @user.goals.exists?(:user_id => @user.id) %>
+			<ul>
+			<% @user.goals.each do |g| %>
+					<li>
+						<%= check_box_tag :goals, g.id, g.complete ? true : false %>
+						<label for="<%= g.id %>"><%= g.goal %></label>
+					</li>
+			<% end %>
+			</ul>
+		<% end %>
 	</div> <!-- goals card -->
+
 	<div class="card unit two-of-three log--card">
 		<h2><%=link_to "Fitness Log", log_user_path(current_user)%></h2>
 		<% if @user.fitness_logs.exists?(:user_id => @user.id) %>
