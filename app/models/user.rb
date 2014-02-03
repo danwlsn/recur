@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
 	has_many :goal_weights
 	has_many :fitness_logs
 	has_one :option
+	has_many :goals
 
 	before_save { self.email = email.downcase }
 	before_create :create_remember_token
