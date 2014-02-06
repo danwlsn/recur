@@ -5,7 +5,7 @@ group :development do
   gem 'sqlite3', '1.3.8'
 end
 
-gem 'rails', '4.0.1'
+gem 'rails', '4.0.2'
 gem 'bcrypt-ruby', '3.1.2'
 # gem 'sqlite3'
 gem 'sass-rails', '~> 4.0.0'
