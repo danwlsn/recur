@@ -29,14 +29,14 @@
 	<div class="card unit one-of-three goals--card">
 		<h2><%= link_to "Goals", goals_user_path(current_user) %></h2>
 		<% if @user.goals.exists?(:user_id => @user.id) %>
-			<ul>
-			<% @user.goals.where(:complete => false).each do |g| %>
-					<li>
-						<%= check_box_tag :goals, g.id, g.complete ? true : false %>
-						<label for="<%= g.id %>"><%= g.goal %></label>
-					</li>
-			<% end %>
-			</ul>
+				<ul>
+					<% @user.goals.where(:complete => false).each do |g| %>
+						<li>
+							<%= check_box_tag :goals, g.id, g.complete ? true : false, class: "goals--checks" %>
+							<label for="<%= g.id %>"><%= g.goal %></label>
+						</li>
+					<% end %>
+				</ul>
 		<% end %>
 	</div> <!-- goals card -->
 

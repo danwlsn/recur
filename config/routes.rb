@@ -20,6 +20,13 @@ Fitness::Application.routes.draw do
 	resources :option, only: [:create, :update, :destroy]
 	resources :goals, only: [:create, :update, :destroy]
 
+	resources :goals do
+		member do
+			get :complete, :via => :post
+		end
+	end
+	# match 'goals/complete' => 'goals#complete', :via => :post
+
 	resources :sessions, only: [:new, :create, :destroy]
 	get '/signin', to: 'sessions#new'
 	delete '/signout', to: 'sessions#destroy'

@@ -33,4 +33,18 @@ $(document).ready(function(){
 			$('.strength').css('display', 'block');
 		}
 	})
+
+	// Goals AJAX
+	$(".goals--checks").bind('change', function(){
+		if (this.checked){
+			$.ajax({
+				url: '/goals/'+this.value+'/complete',
+				type: 'GET',
+				data: {"completed": this.checked}
+			});
+		}
+		else {
+			 alert("no");
+		}
+	});
 });

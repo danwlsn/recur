@@ -4,11 +4,21 @@ class GoalsController < ApplicationController
 		@goal = current_user.goals.build(goal_params)
 		if @goal.save # If save
 			flash[:success] = "Goal created"
-			redirect_to current_user
+			respond_to do |format|
+				format.html { redirect_to current_user }
+				format.js
+			end
 		end
 	end
 
 	def update
+	end
+
+	def complete
+		@goal = Goal.find(params[:id])
+
+		@goal.update_attributes(:complete => true)
+		redirect_to root_path
 	end
 
 	private

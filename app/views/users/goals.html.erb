@@ -6,10 +6,10 @@
 <div class="unit one-of-two card goals--card">
 	<h2>Goals</h2>
 	<% if @user.goals.exists?(:user_id => @user.id) %>
-		<ul>
+		<ul class="check--list">
 		<% @user.goals.where(:complete => false).each do |g| %>
 				<li>
-					<%= check_box_tag :goals, g.id, g.complete ? true : false %>
+					<%= check_box_tag :goals, g.id, g.complete ? true : false, class: "goals--checks" %>
 					<label for="<%= g.id %>"><%= g.goal %></label>
 				</li>
 		<% end %>
@@ -19,7 +19,7 @@
 <div class="unit one-of-two card edit--card">
 	<h2>Add goals</h2>
 	<div class="grid inner">
-		<%= form_for @goal do |f| %>
+		<%= form_for @goal, :remote => true do |f| %>
 			<%= f.text_field :goal, class: "general--input" %>
 
 			<%= f.submit "Submit", class: "submit--button" %>
