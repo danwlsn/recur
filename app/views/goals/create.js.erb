@@ -1,1 +1,2 @@
 $("#goal_goal").val("");
+$(".goals--card ul").append($("<li></li>").html('<%= current_user.goals.last[:goal] %>'));

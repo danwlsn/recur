@@ -3,7 +3,6 @@ class GoalsController < ApplicationController
 	def create
 		@goal = current_user.goals.build(goal_params)
 		if @goal.save # If save
-			flash[:success] = "Goal created"
 			respond_to do |format|
 				format.html { redirect_to goals_user(currnet_user) }
 				format.js
