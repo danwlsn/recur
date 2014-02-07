@@ -118,6 +118,7 @@ end
 
 	# Goals
 	def goals
+		@user = User.find(params[:id])
 		@goal = current_user.goals.build
 	end
 

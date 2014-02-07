@@ -18,7 +18,7 @@ Fitness::Application.routes.draw do
 	resources :goal_weights, only: [:create, :destroy]
 	resources :fitness_logs, only: [:create, :destroy]
 	resources :option, only: [:create, :update, :destroy]
-	resources :option, only: [:create, :update, :destroy]
+	resources :goals, only: [:create, :update, :destroy]
 
 	resources :sessions, only: [:new, :create, :destroy]
 	get '/signin', to: 'sessions#new'

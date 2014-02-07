@@ -1,2 +1,29 @@
 <div class="unit span-grid">
+<% flash.each do |key, value| %>
+	<div class="flash <%= key %>"><%= value %></div>
+<% end %>
+<h2 class="unit span-grid">Goals</h2>
+<div class="unit one-of-two card goals--card">
+	<h2>Goals</h2>
+	<% if @user.goals.exists?(:user_id => @user.id) %>
+		<ul>
+		<% @user.goals.where(:complete => false).each do |g| %>
+				<li>
+					<%= check_box_tag :goals, g.id, g.complete ? true : false %>
+					<label for="<%= g.id %>"><%= g.goal %></label>
+				</li>
+		<% end %>
+		</ul>
+	<% end %>
+</div>
+<div class="unit one-of-two card edit--card">
+	<h2>Add goals</h2>
+	<div class="grid inner">
+		<%= form_for @goal do |f| %>
+			<%= f.text_field :goal, class: "general--input" %>
+
+			<%= f.submit "Submit", class: "submit--button" %>
+		<% end %>
+	</div>
+</div>
 </div>
