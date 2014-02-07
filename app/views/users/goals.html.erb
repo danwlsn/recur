@@ -7,7 +7,7 @@
 <div class="unit one-of-two card edit--card">
 	<h2>Add goals</h2>
 	<div class="grid inner">
-		<%= form_for @goal, :remote => true do |f| %>
+		<%= form_for @goal do |f| %>
 			<%= f.text_field :goal, class: "general--input" %>
 
 			<%= f.submit "Submit", class: "submit--button" %>

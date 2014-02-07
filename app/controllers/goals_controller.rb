@@ -4,7 +4,7 @@ class GoalsController < ApplicationController
 		@goal = current_user.goals.build(goal_params)
 		if @goal.save # If save
 			respond_to do |format|
-				format.html { redirect_to goals_user(currnet_user) }
+				format.html { redirect_to goals_user_path(current_user) }
 				format.js
 			end
 		end
