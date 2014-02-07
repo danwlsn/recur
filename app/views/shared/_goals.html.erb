@@ -1,10 +1,12 @@
-<% if @user.goals.exists?(:user_id => @user.id) %>
-		<ul class="check--list">
-		<% @user.goals.where(:complete => false).each do |g| %>
-				<li>
-					<%= check_box_tag :goals, g.id, g.complete ? true : false, class: "goals--checks" %>
-					<label for="<%= g.id %>"><%= g.goal %></label>
-				</li>
-		<% end %>
-		</ul>
+<% if @user.goals.exists?(:user_id => @user.id, :complete => false) %>
+	<ul class="check--list">
+	<% @user.goals.where(:complete => false).each do |g| %>
+			<li>
+				<%= check_box_tag :goals, g.id, g.complete ? true : false, class: "goals--checks" %>
+				<label for="<%= g.id %>"><%= g.goal %></label>
+			</li>
 	<% end %>
+	</ul>
+<% else %>
+	<h2>Get some goals!</h2>
+<% end %>
