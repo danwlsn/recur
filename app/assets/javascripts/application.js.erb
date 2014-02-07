@@ -42,6 +42,7 @@ $(document).ready(function(){
 				type: 'GET',
 				data: {"completed": this.checked}
 			});
+			$(this).parent().delay(1000).fadeOut();
 		}
 		else {
 			 alert("no");

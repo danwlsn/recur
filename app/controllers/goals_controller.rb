@@ -5,7 +5,7 @@ class GoalsController < ApplicationController
 		if @goal.save # If save
 			flash[:success] = "Goal created"
 			respond_to do |format|
-				format.html { redirect_to current_user }
+				format.html { redirect_to goals_user(currnet_user) }
 				format.js
 			end
 		end
