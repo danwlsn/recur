@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  slug: MyString
+  title: MyString
+  args_a: 1
+  args_b: 1
+
+two:
+  slug: MyString
+  title: MyString
+  args_a: 1
+  args_b: 1
