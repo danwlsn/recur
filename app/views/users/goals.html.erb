@@ -3,15 +3,23 @@
 <div class="unit one-of-two card goals--card">
 	<h2>Goals</h2>
 	<%= render "shared/goals" %>
+	<h2>Completed</h2>
+	<% if @user.goals.exists?(:user_id => @user.id, :complete => true) %>
+		<ul class="check--list">
+		<% @user.goals.where(:complete => true).order("created_at DESC").each do |g| %>
+				<li>
+					<label for="<%= g.id %>"><%= g.goal %></label>
+				</li>
+		<% end %>
+		</ul>
+	<% end %>
 </div>
 <div class="unit one-of-two card edit--card">
 	<h2>Add goals</h2>
-	<div class="grid inner">
 		<%= form_for @goal do |f| %>
 			<%= f.text_field :goal, class: "general--input" %>
 
 			<%= f.submit "Submit", class: "submit--button" %>
 		<% end %>
-	</div>
 </div>
 </div>
