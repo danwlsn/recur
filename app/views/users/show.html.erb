@@ -31,6 +31,7 @@
 		<%= render 'shared/goals' %>
 	</div> <!-- goals card -->
 
+	<div class="unit one-of-six"></div>
 	<div class="card unit two-of-three log--card">
 		<h2><%=link_to "Fitness Log", log_user_path(current_user)%></h2>
 		<% if @user.fitness_logs.where("created_at >= ?", 1.week.ago.utc).exists? %>
@@ -52,5 +53,6 @@
 		<% else %>
 			<h2>Get to the gym!</h2>
 		<% end %>
-	</div>
+	</div> <!-- log card -->
+	<div class="unit one-of-six"></div>
 </div>
