@@ -42,15 +42,15 @@ end
 		end
 		# If current weight exsits
 		if @user.current_weights.exists?(:user_id => @user.id)
-			@current_weight = @user.current_weights.last[:weight]
+			@cw = @user.current_weights.last[:weight]
 		else
-			@current_weight = 0
+			@cw = 0
 		end
 		# If goal weight exsists
 		if @user.goal_weights.exists?(:user_id => @user.id)
-			@goal_weight = @user.goal_weights.last[:weight]
+			@gw = @user.goal_weights.last[:weight]
 		else
-			@goal_weight = 0
+			@gw = 0
 		end
 		# If fitness log exists
 		if @user.fitness_logs.exists?(:user_id => @user.id)

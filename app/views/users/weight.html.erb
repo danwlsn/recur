@@ -4,16 +4,7 @@
 <h2 class="unit span-grid">Weight</h2>
 <div class="unit one-of-two card weight--card">
 	<h2>Weight</h2>
-	<div class="grid inner">
-		<div class="unit one-of-two cw">
-			<h3>Current Weight</h3>
-			<p><%= @cw %> <%= @weightFormat %></p>
-		</div>
-		<div class="unit one-of-two gw">
-			<h3>Goal Weight</h3>
-			<p><%= @gw %> <%= @weightFormat %></p>
-		</div>
-	</div>
+	<%= render 'shared/show_weight' %>
 </div>
 <div class="unit one-of-two card edit--card">
 	<h2>Update</h2>
