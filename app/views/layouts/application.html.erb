@@ -15,19 +15,20 @@
 			<nav>
 				<ul>
 					<% if signed_in? %>
-						<li><%= link_to current_user.name, user_path(current_user) %>
+						<li><%= link_to current_user.name, user_path(current_user), class: "mobile" %>
 							<ul class='submenu'>
-								<li><%=link_to "Edit" , edit_user_path(current_user)%></li>
-								<li><%= link_to 'Sign out', signout_path, method: "delete"%></li>
+								<li><%=link_to "Edit" , edit_user_path(current_user), class: "mobile"%></li>
+								<li><%= link_to 'Sign out', signout_path, method: "delete", class: "mobile"%></li>
 							</ul></li>
 					<% else %>
-						<li><%= link_to 'Home', root_url %></li>
+						<li><%= link_to 'Home', root_url, class: "mobile" %></li>
 					<% end %>
-					<li><%= link_to 'About', about_path %></li>
-					<li><%= link_to 'Contact', contact_path %></li>
+					<li><%= link_to 'About', about_path, class: "mobile" %></li>
+					<li><%= link_to 'Contact', contact_path, class: "mobile" %></li>
+					<li><%= image_tag("burger.png", class: "burger-icon") %></li>
 				</ul>
 			</nav> <!-- nav -->
-		<div/> <!-- page -->
+		</div> <!-- page -->
 	</header> <!-- header -->
 		<div class="page content">
 			<div class="main grid">
