@@ -468,3 +468,37 @@ input[type="radio"] {
 		}
 	}
 }
+
+/****************************************
+*						$what-is
+*****************************************/
+.home {
+	padding: 1em;
+	p {
+		font-size: 30px;
+		font-weight: 100;
+		margin-bottom: 0;
+	}
+	ul {
+		font-weight: 900;
+		font-size: 40px;
+		padding-left: 0;
+		list-style: none;
+		li {
+			display: inline-block;
+			width:32%
+		}
+	}
+	img {
+		width: 100%;
+		margin-bottom: 0;
+	}
+}
+
+.blue {
+	background-color: $blue;
+	color:#fff;
+}
+.white {
+	color:$blue;
+}
