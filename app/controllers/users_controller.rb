@@ -113,6 +113,12 @@ end
 	# Log view
 	def log
 		# Log variable for form
+		# If fitness log exists
+		@user = User.find(params[:id])
+		if @user.fitness_logs.exists?(:user_id => @user.id)
+
+			@activities = @user.fitness_logs
+		end
 		@fitness_log = current_user.fitness_logs.build
 	end
 
