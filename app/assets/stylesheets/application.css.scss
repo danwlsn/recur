@@ -361,6 +361,9 @@ form {
 				top: -1px;
 				*overflow: hidden;
 			}
+			.completed-on {
+				display: block;
+			}
 			input[type="checkbox"]:checked + label{
 				color:red;
 				text-decoration:line-through;

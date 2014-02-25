@@ -9,6 +9,7 @@
 		<% @user.goals.where(:complete => true).order("created_at DESC").each do |g| %>
 				<li>
 					<label for="<%= g.id %>"><%= g.goal %></label>
+					<label class="completed-on" for="<%= g.id %>">Completed on : <%= g.updated_at.to_formatted_s(:short) %></label>
 				</li>
 		<% end %>
 		</ul>
