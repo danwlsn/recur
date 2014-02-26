@@ -355,7 +355,6 @@ form {
 		display: none;
 		background-color: $blue;
 		padding:0.5em 1em;
-		display: inline-block;
 		cursor: pointer;
 	}
 	.show--more:hover {
@@ -388,6 +387,11 @@ form {
 		li + li {
 			border-top: 1px solid #eee;
 		}
+	}
+}
+.edit--card {
+	form {
+		width:80%;
 	}
 }
 
