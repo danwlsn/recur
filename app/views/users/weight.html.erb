@@ -11,16 +11,16 @@
 	<div class="grid inner">
 		<div class="unit one-of-two">
 			<%= form_for @current_weight, :remote => true do |f| %>
-			<h3>Current Weight</h3>
+			<h3>Current</h3>
 			<%= f.text_field :weight, class: "general--input" %>
-			<%= f.submit "Update Current Weight", class: "submit--button" %>
+			<%= f.submit "Update Current", class: "submit--button" %>
 			<% end %>
 		</div>
 		<div class="unit one-of-two">
 			<%= form_for@goal_weight, :remote => true do |f| %>
-			<h3>Goal Weight</h3>
+			<h3>Goal</h3>
 			<%= f.text_field :weight, class: "general--input" %>
-			<%= f.submit "Update Goal Weight", class: "submit--button" %>
+			<%= f.submit "Update Goal", class: "submit--button" %>
 			<% end %>
 		</div>
 	</div>
