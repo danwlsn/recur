@@ -195,11 +195,8 @@ header {
 			margin: 0;
 			li {
 				padding:0 1em;
-				.burger-icon {
-					height:40px;
-					margin-bottom: 0;
-					vertical-align: bottom;
-					display: none;
+				a{
+					display: block;
 				}
 				.submenu {
 					display: none;
@@ -222,7 +219,13 @@ header {
 			}
 		}
 	}
-@media all and (max-width: 500px) {
+	.burger-icon {
+		height:40px;
+		margin-bottom: 0;
+		vertical-align: bottom;
+		display: none;
+	}
+@media all and (max-width: 650px) {
 	header {
 		height: auto;
 		h1 {
@@ -232,23 +235,19 @@ header {
 			line-height: 1;
 			margin-top: 10px;
 		}
-		nav {
+		.mobile {
+			display: none;
 			text-align: center;
 			position: relative;
-			display: block;
 			margin-bottom: 0;
 			ul {
 				li {
 					display: block;
 					padding: 0 0.5em;
-				}
-				.burger-icon {
-					display: block;
-					cursor: pointer;
-					margin: 0 auto;
-				}
-				.mobile {
-					display: none;
+					a {
+						border-bottom: 1px solid black;
+						background-color: $lightblue;
+					}
 				}
 				.submenu {
 					margin: 0;
@@ -256,14 +255,17 @@ header {
 					position: relative;
 					top: 0;
 					a {
+						border-bottom: 1px solid black;
+						background-color: $lightblue;
 						width: 100%;
-						border: 0;
-					}
-					.mobile {
-						display: none;
 					}
 				}
 			}
+		}
+		.burger-icon {
+			display: block;
+			cursor: pointer;
+			margin: 0 auto;
 		}
 	}
 }
