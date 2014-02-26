@@ -3,6 +3,7 @@
 *****************************************/
 $blue: #5CA9DC;
 $lightblue: #7EB7DC;
+$darkblue: #1E638F;
 $bodyGray:#484848;
 $linkGray:#444;
 $hoverGray:#282828;
@@ -350,6 +351,17 @@ form {
 
 .goals--card {
 	overflow: auto;
+	.show--more {
+		display: none;
+		background-color: $blue;
+		padding:0.5em 1em;
+		display: inline-block;
+		cursor: pointer;
+	}
+	.show--more:hover {
+		background-color: $darkblue;
+		color:#fafafa;
+	}
 	ul {
 		text-align: left;
 		list-style-type: none;
@@ -375,6 +387,21 @@ form {
 		}
 		li + li {
 			border-top: 1px solid #eee;
+		}
+	}
+}
+
+@media all and (max-width: 699px) {
+	.goals--card {
+		h2 {
+			margin-bottom: 0;
+		}
+		.show--more {
+			display: inline-block;
+			margin-bottom: 1.5em;
+		}
+		.completed--goals {
+			display: none;
 		}
 	}
 }

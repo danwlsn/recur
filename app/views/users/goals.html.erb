@@ -4,8 +4,9 @@
 	<h2>Goals</h2>
 	<%= render "shared/goals" %>
 	<h2>Completed</h2>
+	<a class="show--more">Show more</a>
 	<% if @user.goals.exists?(:user_id => @user.id, :complete => true) %>
-		<ul class="check--list">
+		<ul class="check--list completed--goals">
 		<% @user.goals.where(:complete => true).order("created_at DESC").each do |g| %>
 				<li>
 					<label for="<%= g.id %>"><%= g.goal %></label>
