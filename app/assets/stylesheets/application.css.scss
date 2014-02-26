@@ -391,7 +391,7 @@ form {
 }
 .edit--card {
 	form {
-		width:80%;
+		width:90%;
 	}
 }
 
@@ -441,7 +441,7 @@ form {
 		height:auto;
 	}
 	form {
-		width: 80%;
+		width: 90%;
 	}
 }
 
@@ -494,6 +494,12 @@ input[type="radio"] {
 .submit--button:hover {
 	background-color:$blue;
 	color: #fff;
+}
+
+@media all and (max-width: 699px) {
+	.general--input, .submit--button {
+		font-size: 16px;
+	}
 }
 
 /****************************************
@@ -564,6 +570,11 @@ input[type="radio"] {
 	.main {
 		.button {
 			margin-bottom: 1.5em;
+		}
+		.form {
+			h2 {
+				font-size: 30px;
+			}
 		}
 	}
 }
