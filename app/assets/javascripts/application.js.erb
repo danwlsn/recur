@@ -56,6 +56,10 @@ $(document).ready(function(){
 
 	// Show completed goals
 	$('.show--more').on("click", function(){
+		if($(this).html() == 'Show more')
+			$(this).html('Hide');
+		else
+			$(this).html('Show more');
 		$('.completed--goals').slideToggle();
 	})
 });
