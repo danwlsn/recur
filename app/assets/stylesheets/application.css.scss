@@ -220,7 +220,7 @@ header {
 		}
 	}
 	.burger-icon {
-		height:40px;
+		height:30px;
 		margin-bottom: 0;
 		vertical-align: bottom;
 		display: none;
@@ -234,12 +234,14 @@ header {
 			height: auto;
 			line-height: 1;
 			margin-top: 10px;
+			margin-bottom: 0;
 		}
 		.mobile {
 			display: none;
 			text-align: center;
 			position: relative;
 			margin-bottom: 0;
+			margin-top: 0.5em;
 			ul {
 				li {
 					display: block;
@@ -265,7 +267,7 @@ header {
 		.burger-icon {
 			display: block;
 			cursor: pointer;
-			margin: 0 auto;
+			margin: 0.5em auto;
 		}
 	}
 }
