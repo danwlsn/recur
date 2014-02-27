@@ -19,7 +19,6 @@ gem 'jbuilder', '~> 1.2'
 # Extras
 gem 'high_voltage'
 gem 'simple_form'
-gem "chartkick"
 
 group :doc do
 	gem 'sdoc', require: false
