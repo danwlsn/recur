@@ -402,6 +402,13 @@ form {
 	}
 }
 
+.analytics--card {
+	#myChart {
+		width:100%;
+		height:100%;
+	}
+}
+
 @media all and (max-width: 699px) {
 	.goals--card {
 		h2 {

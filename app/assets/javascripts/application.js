@@ -62,7 +62,4 @@ $(document).ready(function(){
 			$(this).html('Show more');
 		$('.completed--goals').slideToggle();
 	})
-
-	// Chart.js
-
 });
