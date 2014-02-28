@@ -6,7 +6,7 @@ class FitnessLogsController < ApplicationController
 		@fitness_log = current_user.fitness_logs.build(fitness_params)
 		if @fitness_log.save # if save
 			flash[:success] = "Log Updates"
-			redirect_to log_user(current_user)
+			redirect_to log_user_path(current_user)
 		end
 	end
 

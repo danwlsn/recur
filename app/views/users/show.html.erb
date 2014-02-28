@@ -2,7 +2,7 @@
 		<div class="success unit span-grid"><p><%= flash[:success] %></p></div>
 	<% end %>
 	<div class="card unit one-of-three weight--card">
-		<h2><%=link_to "Weight", weight_user_path(current_user)%></h2>
+		<h2><%=link_to "Weight", weight_user_path(current_user)%><%= image_tag('link.png', class: "link") %></h2>
 		<%= render 'shared/show_weight' %>
 	</div> <!-- weight card -->
 

@@ -155,7 +155,7 @@ end
 			@squat_chart = LazyHighCharts::HighChart.new('graph') do |f|
 				f.dateFormat
 				f.title({ :text=>"Squat"})
-				f.series(:name=>'weight', :data=>@sqaut_array, :showInLegend=> false)
+				f.series(:name=>'weight', :data=>@squat_array, :showInLegend=> false)
 				f.options[:xAxis][:categories] = []
 				f.options[:yAxis][:title][:text] = 'Weight'
 			end
