@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 1.2'
 # Extras
 gem 'high_voltage'
 gem 'simple_form'
+gem 'lazy_high_charts'
 
 group :doc do
 	gem 'sdoc', require: false

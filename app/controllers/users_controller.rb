@@ -97,7 +97,7 @@ end
 		if @user.current_weights.exists?(:user_id => @user.id)
 			@cw = @user.current_weights.last[:weight]
 			# @cw_array= @user.current_weights.group("date(created_at)").pluck(:weight)
-			@cw_array = @user.current_weights.group("date(created_at)").map { |x| [x.created_at.getutc, x.weight] }
+			@cw_array = @user.current_weights.group("date(created_at)").map { |x| [x.created_at.to_s, x.weight] }
 		else
 			@cw = 0
 		end
@@ -110,6 +110,16 @@ end
 		# Build varibles for forms
 		@current_weight = current_user.current_weights.build
 		@goal_weight = current_user.goal_weights.build
+		# Highcharts
+		@chart = LazyHighCharts::HighChart.new('graph') do |f|
+			f.dateFormat
+      f.title({ :text=>"Weight"})
+      f.series(:name=>'weight', :data=>@cw_array, :showInLegend=> false)
+			f.options[:xAxis][:categories] = []
+			f.options[:yAxis][:title][:text] = 'Weight in '+@weightFormat
+			# f.options[:xAxis][:type] = 'datetime'
+			# f.options[:xAxis][:dateTimeLabelFormats] = [month: '%e. %b', year: '%b']
+    end
 	end
 
 	# Log view

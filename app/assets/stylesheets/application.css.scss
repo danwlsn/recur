@@ -403,9 +403,10 @@ form {
 }
 
 .analytics--card {
-	#myChart {
-		width:100%;
+	background-color:transparent;
+	#weight--chart {
 		height:100%;
+		width:100%;
 	}
 }
 
