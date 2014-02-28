@@ -239,7 +239,7 @@ header {
 			margin-bottom: 0;
 		}
 		.mobile > ul:first-of-type > li:last-child > a {
-			border-bottom: 1px solid black;
+			border-bottom: 1px solid #000;
 		}
 		.mobile {
 			display: none;
@@ -252,7 +252,7 @@ header {
 					display: block;
 					padding: 0 0.5em;
 					a {
-						border-top: 1px solid black;
+						border-top: 1px solid #000;
 					}
 				}
 				a:hover {
@@ -264,7 +264,7 @@ header {
 					position: relative;
 					top: 0;
 					a {
-						border-top: 1px solid black;
+						border-top: 1px solid #000;
 						width: 100%;
 					}
 					a:hover {
