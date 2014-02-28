@@ -8,7 +8,7 @@
 		<%= f.text_field :activity, list: 'activities', class: 'general--input' %>
 		<datalist id="activities">
 			<% @activities.each do |a| %>
-				<option value="<%= a[:activity] %>">
+				<option value="<%= a %>">
 			<% end %>
 		</datalist>
 		<h3>Type</h3>

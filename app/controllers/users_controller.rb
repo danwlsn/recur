@@ -128,7 +128,7 @@ end
 		# If fitness log exists
 		@user = User.find(params[:id])
 		if @user.fitness_logs.exists?(:user_id => @user.id)
-			@activities = @user.fitness_logs
+			@activities = @user.fitness_logs.pluck(:activity).uniq
 			# Highcharts chart information
 			b = "Bench press"
 			d = "Deadlift"
