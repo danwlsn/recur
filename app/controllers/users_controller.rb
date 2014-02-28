@@ -118,7 +118,7 @@ end
 			f.options[:xAxis][:categories] = []
 			f.options[:yAxis][:title][:text] = 'Weight in '+@weightFormat
 			# f.options[:xAxis][:type] = 'datetime'
-			# f.options[:xAxis][:dateTimeLabelFormats] = [month: '%e. %b', year: '%b']
+			# f.options[:xAxis][:dateTimeLabelFormats] = [month: '%e. %b', year: '%b']t
     end
 	end
 

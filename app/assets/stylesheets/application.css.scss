@@ -180,7 +180,6 @@ header {
 	left: 0;
 	height: 100px;
 	background-color: $blue;
-	}
 	h1 {
 			font-weight: 100;
 			display: inline-block;
@@ -220,12 +219,14 @@ header {
 			}
 		}
 	}
-	.burger-icon {
-		height:30px;
-		margin-bottom: 0;
-		vertical-align: bottom;
-		display: none;
-	}
+}
+.burger-icon {
+	height:30px;
+	margin-bottom: 0;
+	vertical-align: bottom;
+	display: none;
+}
+
 @media all and (max-width: 650px) {
 	header {
 		height: auto;
@@ -407,6 +408,33 @@ form {
 	#weight--chart {
 		height:100%;
 		width:100%;
+	}
+}
+
+.log--analysis {
+	height:auto;
+	.tab--bar {
+		nav {
+			ul {
+				list-style-type: none;
+				color:#fff;
+				li {
+					cursor: pointer;
+					display: inline-block;
+					width: 32%;
+					text-align: center;
+					padding: .5em 0;
+					background-color: $blue;
+					box-shadow: 3px 3px 0 0 #333;
+				}
+				.selected {
+					background-color: $darkblue;
+					box-shadow: 1px 1px 0 0 #333;
+					top:2px;
+					left:2px;
+				}
+			}
+		}
 	}
 }
 

@@ -45,4 +45,10 @@ $(document).ready(function(){
 			$(this).html('Show more');
 		$('.completed--goals').slideToggle();
 	})
+
+	// Tab bar
+	$('.tab').on("click", function(){
+		$('.tab').removeClass('selected');
+		$(this).addClass('selected');
+	})
 });
