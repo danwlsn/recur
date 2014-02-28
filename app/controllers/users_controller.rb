@@ -97,7 +97,7 @@ end
 		if @user.current_weights.exists?(:user_id => @user.id)
 			@cw = @user.current_weights.last[:weight]
 			# Get user date and weight form database
-			@cw_array = @user.current_weights.group("date(created_at)").map { |x| [x.created_at.to_s, x.weight] }
+			@cw_array = @user.current_weights.where("created_at >= ?", 6.months.ago.utc).map { |x| [x.created_at.to_s, x.weight] }
 			# Highcharts
 			@chart = LazyHighCharts::HighChart.new('graph') do |f|
 				f.dateFormat
