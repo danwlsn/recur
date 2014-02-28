@@ -25,6 +25,27 @@
 		</div>
 	</div>
 </div>
-<div class="unit span-grid card analytics--card">
-
+<script type="text/javascript" charset="utf-8">
+$(function () {
+  new Highcharts.Chart({
+    chart: { renderTo: 'weightChart' },
+    title: { text: 'Current weight' },
+	   xAxis: {
+	   	type: 'datetime',
+      dateTimeLabelFormats: {
+				month:'%e. %b',
+				year: '%b'
+      }
+	   },
+    yAxis: {
+      title: { text: 'Weight in <%= @weightFormat %>'}
+    },
+    series: [{
+      data: <%= @cw_array %>
+    }]
+  });
+});
+</script>
+<div class="unit span-grid card analytics--card" id="weightChart">
 </div>
+<%= @cw_array%>

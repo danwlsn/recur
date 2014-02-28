@@ -96,6 +96,8 @@ end
 		# If current weight exists
 		if @user.current_weights.exists?(:user_id => @user.id)
 			@cw = @user.current_weights.last[:weight]
+			# @cw_array= @user.current_weights.group("date(created_at)").pluck(:weight)
+			@cw_array = @user.current_weights.group("date(created_at)").map { |x| [x.created_at.getutc, x.weight] }
 		else
 			@cw = 0
 		end
