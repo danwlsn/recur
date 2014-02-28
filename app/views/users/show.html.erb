@@ -15,13 +15,13 @@
 	</div> <!-- date--card -->
 
 	<div class="card unit one-of-three goals--card">
-		<h2><%= link_to "Goals", goals_user_path(current_user) %></h2>
+		<h2><%= link_to "Goals", goals_user_path(current_user) %><%= image_tag('link.png', class: "link") %></h2>
 		<%= render 'shared/goals' %>
 	</div> <!-- goals card -->
 
 	<div class="unit one-of-six"></div>
 	<div class="card unit two-of-three log--card">
-		<h2><%=link_to "Fitness Log", log_user_path(current_user)%></h2>
+		<h2><%=link_to "Fitness Log", log_user_path(current_user)%><%= image_tag('link.png', class: "link") %></h2>
 		<% if @user.fitness_logs.where("created_at >= ?", 1.week.ago.utc).exists? %>
 			<% @fitnessLog.each do |date, logs| %>
 				<p class="date"><%= date %></p>
