@@ -1,11 +1,8 @@
 <% flash.each do |key, value| %>
 	<div class="flash <%= key %>"><%= value %></div>
 <% end %>
-<div class="unit span-grid">
-	<h2>Fitness log</h2>
-</div>
 <div class="unit span-grid card log--card">
-	<h2>Update</h2>
+	<h2>Update log</h2>
 	<%= form_for @fitness_log do |f| %>
 		<h3>Activity</h3>
 		<%= f.text_field :activity, list: 'activities', class: 'general--input' %>
