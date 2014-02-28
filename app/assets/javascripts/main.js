@@ -47,8 +47,31 @@ $(document).ready(function(){
 	})
 
 	// Tab bar
+	$('#dead--chart').css('display', 'none');
+	$('#squat--chart').css('display', 'none');
 	$('.tab').on("click", function(){
+		$(window).trigger('resize');
 		$('.tab').removeClass('selected');
 		$(this).addClass('selected');
+		var choice = $(this).html();
+
+		if (choice == "Bench press")
+		{
+			$('#bench--chart').css('display', 'block');
+			$('#dead--chart').css('display', 'none');
+			$('#squat--chart').css('display', 'none');
+		}
+		else if (choice == "Deadlift")
+		{
+			$('#bench--chart').css('display', 'none');
+			$('#dead--chart').css('display', 'block');
+			$('#squat--chart').css('display', 'none');
+		}
+		else
+		{
+			$('#bench--chart').css('display', 'none');
+			$('#dead--chart').css('display', 'none');
+			$('#squat--chart').css('display', 'block');
+		}
 	})
 });
