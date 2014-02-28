@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 		@options = @user.create_option(:weight => 'lbs')
 		@options.save
 		sign_in(@user) # sign user in
-		redirect_to @user # bounce them to their page
+		redirect_to weight_user_path(@user) # bounce them to their page
 	else
 		render 'new' # Else bounce them to sign up
 	end

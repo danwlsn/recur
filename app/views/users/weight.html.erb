@@ -47,5 +47,7 @@
 // });
 </script>
 <div class="unit span-grid card analytics--card" id="weightChart">
-	<%= high_chart("weight--chart", @chart)  %>
+	<% if @chart %>
+		<%= high_chart("weight--chart", @chart)  %>
+	<% end %>
 </div>
