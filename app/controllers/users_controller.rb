@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
 	# Create new users
 	def create
-	@user = User.new(user_params)
+		@user = User.new(user_params)
 	# If save
 	if @user.save
 		@options = @user.create_option(:weight => 'lbs')
@@ -96,8 +96,18 @@ end
 		# If current weight exists
 		if @user.current_weights.exists?(:user_id => @user.id)
 			@cw = @user.current_weights.last[:weight]
-			# @cw_array= @user.current_weights.group("date(created_at)").pluck(:weight)
+			# Get user date and weight form database
 			@cw_array = @user.current_weights.group("date(created_at)").map { |x| [x.created_at.to_s, x.weight] }
+			# Highcharts
+			@chart = LazyHighCharts::HighChart.new('graph') do |f|
+				f.dateFormat
+				f.title({ :text=>"Weight"})
+				f.series(:name=>'weight', :data=>@cw_array, :showInLegend=> false)
+				f.options[:xAxis][:categories] = []
+				f.options[:yAxis][:title][:text] = 'Weight in '+@weightFormat
+				# f.options[:xAxis][:type] = 'datetime'
+				# f.options[:xAxis][:dateTimeLabelFormats] = [month: '%e. %b', year: '%b']t
+			end
 		else
 			@cw = 0
 		end
@@ -110,16 +120,6 @@ end
 		# Build varibles for forms
 		@current_weight = current_user.current_weights.build
 		@goal_weight = current_user.goal_weights.build
-		# Highcharts
-		@chart = LazyHighCharts::HighChart.new('graph') do |f|
-			f.dateFormat
-      f.title({ :text=>"Weight"})
-      f.series(:name=>'weight', :data=>@cw_array, :showInLegend=> false)
-			f.options[:xAxis][:categories] = []
-			f.options[:yAxis][:title][:text] = 'Weight in '+@weightFormat
-			# f.options[:xAxis][:type] = 'datetime'
-			# f.options[:xAxis][:dateTimeLabelFormats] = [month: '%e. %b', year: '%b']t
-    end
 	end
 
 	# Log view
@@ -128,8 +128,37 @@ end
 		# If fitness log exists
 		@user = User.find(params[:id])
 		if @user.fitness_logs.exists?(:user_id => @user.id)
-
 			@activities = @user.fitness_logs
+			# Highcharts chart information
+			b = "Bench press"
+			d = "Deadlift"
+			s = "Squat"
+			@bench_array = @user.fitness_logs.find(:all, :conditions => ["lower(activity) = ?", b.downcase]).map{|x| [x.created_at.to_s, x.weight]}
+			@deadlift_array = @user.fitness_logs.find(:all, :conditions => ["lower(activity) = ?", d.downcase]).map{|x| [x.created_at.to_s, x.weight]}
+			@squat_array = @user.fitness_logs.find(:all, :conditions => ["lower(activity) = ?", s.downcase]).map{|x| [x.created_at.to_s, x.weight]}
+
+			# Create charts
+			@bench_chart = LazyHighCharts::HighChart.new('graph') do |f|
+				f.dateFormat
+				f.title({ :text=>"Bench Press"})
+				f.series(:name=>'weight', :data=>@bench_array, :showInLegend=> false)
+				f.options[:xAxis][:categories] = []
+				f.options[:yAxis][:title][:text] = 'Weight'
+			end
+			@dead_chart = LazyHighCharts::HighChart.new('graph') do |f|
+				f.dateFormat
+				f.title({ :text=>"Deadlift"})
+				f.series(:name=>'weight', :data=>@deadlift_array, :showInLegend=> false)
+				f.options[:xAxis][:categories] = []
+				f.options[:yAxis][:title][:text] = 'Weight'
+			end
+			@squat_chart = LazyHighCharts::HighChart.new('graph') do |f|
+				f.dateFormat
+				f.title({ :text=>"Squat"})
+				f.series(:name=>'weight', :data=>@sqaut_array, :showInLegend=> false)
+				f.options[:xAxis][:categories] = []
+				f.options[:yAxis][:title][:text] = 'Weight'
+			end
 		end
 		@fitness_log = current_user.fitness_logs.build
 	end
@@ -157,4 +186,4 @@ end
 			@user = User.find(params[:id])
 			redirect_to(root_url) unless current_user?(@user)
 		end
-end
+	end
