@@ -8,6 +8,9 @@ class GoalsController < ApplicationController
 				format.html { redirect_to goals_user_path(current_user) }
 				format.js
 			end
+		else
+			flash[:error] = "Failed to add goal"
+			redirect_to goals_user_path(current_user)
 		end
 	end
 

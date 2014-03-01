@@ -10,6 +10,12 @@ class GoalWeightsController < ApplicationController
 				format.html { redirect_to current_user }
 				format.js
 			end
+		else
+			respond_to do |format|
+				flash[:error] = "Failed to add weight"
+				format.html { redirect_to current_user }
+				format.js
+			end
 		end
 	end
 

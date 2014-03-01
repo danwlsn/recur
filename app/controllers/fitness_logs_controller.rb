@@ -6,6 +6,8 @@ class FitnessLogsController < ApplicationController
 		@fitness_log = current_user.fitness_logs.build(fitness_params)
 		if @fitness_log.save # if save
 			flash[:success] = "Log Updates"
+		else
+			flash[:error] = "Failed to add log"
 			redirect_to log_user_path(current_user)
 		end
 	end
