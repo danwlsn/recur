@@ -1,3 +1,8 @@
+<div class="unit span-grid flash">
+	<% flash.each do |key, value| %>
+		<%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
+	<% end %>
+</div>
 <div class="unit one-of-two card goals--card">
 	<h2>Goals</h2>
 	<%= render "shared/goals" %>

@@ -4,6 +4,7 @@ class GoalsController < ApplicationController
 		@goal = current_user.goals.build(goal_params)
 		if @goal.save # If save
 			respond_to do |format|
+				flash[:success] = "Goal added"
 				format.html { redirect_to goals_user_path(current_user) }
 				format.js
 			end
