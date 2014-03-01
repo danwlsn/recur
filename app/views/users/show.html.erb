@@ -1,5 +1,5 @@
 	<% if flash[:success] %>
-		<div class="success unit span-grid"><p><%= flash[:success] %></p></div>
+		<div class="unit span-grid <%= key  %>"><p><%= flash[:success] %></p></div>
 	<% end %>
 	<div class="card unit one-of-three weight--card">
 		<h2><%=link_to(weight_user_path(current_user)) do %>
