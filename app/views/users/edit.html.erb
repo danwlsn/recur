@@ -1,7 +1,9 @@
-<div class="unit span-grid edit">
-	<% if flash[:error] %>
-  	<div class="error"><p><%= flash[:error] %></p></div>
+<div class="unit span-grid flash">
+	<% flash.each do |key, value| %>
+		<%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
 	<% end %>
+</div>
+<div class="unit span-grid edit">
 	<div class="form">
 		<h2>Preferences</h2>
 		<%= form_for @option do |f| %>
