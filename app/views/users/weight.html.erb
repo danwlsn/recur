@@ -1,6 +1,8 @@
-<% flash.each do |key, value| %>
-	<div class="unit span-grid flash <%= key %>"><%= value %></div>
-<% end %>
+<div class="unit span-grid flash">
+	<% flash.each do |key, value| %>
+		<%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
+	<% end %>
+</div>
 <div class="unit one-of-two card weight--card">
 	<h2>Weight</h2>
 	<%= render 'shared/show_weight' %>
