@@ -10,6 +10,7 @@ Fitness::Application.routes.draw do
 			get :weight
 			get :log
 			get :goals
+			get :admin
 		end
 	end
 	get '/signup', to: 'users#new'

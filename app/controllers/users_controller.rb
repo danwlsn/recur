@@ -169,6 +169,12 @@ end
 		@goal = current_user.goals.build
 	end
 
+	# Admin view
+	def admin
+		@user = User.find(params[:id])
+		@users = User.all
+	end
+
 	private
 
 		# Params from forms
