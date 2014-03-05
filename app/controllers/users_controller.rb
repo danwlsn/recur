@@ -175,6 +175,9 @@ end
 	# Admin view
 	def admin
 		@user = User.find(params[:id])
+		if !userAdmin?(@user)
+			redirect_to root_path
+		end
 		@users = User.all
 	end
 
