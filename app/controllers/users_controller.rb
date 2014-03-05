@@ -19,13 +19,16 @@ class UsersController < ApplicationController
 	# Create new users
 	def create
 		@user = User.new(user_params)
+		@user.access=0
 	# If save
 	if @user.save
 		@options = @user.create_option(:weight => 'lbs')
 		@options.save
 		sign_in(@user) # sign user in
+		flash[:success] = "Welcome, add your weights to get started!"
 		redirect_to weight_user_path(@user) # bounce them to their page
 	else
+		flash[:error] = "There was a problem signing you up"
 		render 'new' # Else bounce them to sign up
 	end
 end
