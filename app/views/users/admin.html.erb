@@ -1,6 +1,6 @@
 <div class="unit span-grid">
 	<h1>Admin</h1>
 	<% @users.each do |u| %>
-		<%= u.name %> - <%= u.current_weights.last[:weight] %> - <%= u.fitness_logs.count %><br>
+		<%= link_to u.name, user_path(u) %> - <%= u.current_weights.last[:weight] %> - <%= u.fitness_logs.count %><br>
 	<% end %>
 </div>
