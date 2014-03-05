@@ -190,6 +190,6 @@ end
 		# Bounce user to root if not correct user
 		def correct_user
 			@user = User.find(params[:id])
-			redirect_to(root_url) unless current_user?(@user)
+			redirect_to(root_url) unless current_user?(@user) || userAdmin?(current_user)
 		end
 	end
