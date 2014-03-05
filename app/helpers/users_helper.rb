@@ -6,4 +6,8 @@ module UsersHelper
     user.update_attribute(:remember_token, User.encrypt(remember_token))
     self.current_user = user
   end
+
+	def userAdmin(user)
+		return user.access == 1
+	end
 end
