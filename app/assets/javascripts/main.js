@@ -27,9 +27,6 @@ $(document).ready(function(){
 			});
 			$(this).parent().delay(1000).fadeOut();
 		}
-		else {
-			 alert("no");
-		}
 	});
 
 	// Burger menu
