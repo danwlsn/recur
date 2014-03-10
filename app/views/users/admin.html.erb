@@ -14,8 +14,8 @@
 		<% @users.each do |u| %>
 			<tr>
 				<td><%= link_to u.name, user_path(u) %></td>
-				<td><%= u.current_weights.last.nil? ? 0 : u.current_weights.last[:weight] %><%= u.option[:weight] %></td>
-				<td><%= u.goal_weights.last.nil? ? 0 : u.goal_weights.last[:weight] %><%= u.option[:weight] %></td>
+				<td><%= u.current_weights.last.blank? ? 0 : u.current_weights.last[:weight] %><%= u.option[:weight] %></td>
+				<td><%= u.goal_weights.last.blank? ? 0 : u.goal_weights.last[:weight] %> <%= u.option[:weight] %></td>
 				<td><%= u.goals.count %> / <%= u.goals.where("complete = ?", true).count %></td>
 				<td><%= u.fitness_logs.count %></td>
 				<% if u.fitness_logs.last %>
