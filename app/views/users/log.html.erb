@@ -41,12 +41,18 @@
 	<div class="charts">
 		<% if @bench_chart %>
 			<%= high_chart("bench--chart", @bench_chart) %>
+		<% else %>
+			<h2 id="bench--chart">Get benching!</h2>
 		<% end %>
 		<% if @dead_chart %>
 			<%= high_chart("dead--chart", @dead_chart) %>
+		<% else %>
+			<h2 id="dead--chart">Get deadlifting!</h2>
 		<% end %>
 		<% if @squat_chart %>
 			<%= high_chart("squat--chart", @squat_chart) %>
+		<% else %>
+			<h2 id="squat--chart">Get squating!</h2>
 		<% end %>
 	</div>
 </div>
