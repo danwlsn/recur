@@ -2,6 +2,20 @@
 	<h2>Admin</h2>
 	<h2>Total users : <%= User.count %></h2>
 
+	<table border=1>
+		<tr>
+			<th>User Name</th>
+			<th>Current weight</th>
+			<th>Goal weight</th>
+			<th>Goals/Completed</th>
+			<th>Fitness activities</th>
+			<th>Last active</th>
+		</tr>
+		<% @users.each do |u| %>
+			<tr>
+				<td><%= link_to u.name, user_path(u) %></td>
 
+			</tr>
+		<% end %>
 	</table>
 </div>
