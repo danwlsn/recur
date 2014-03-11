@@ -8,8 +8,8 @@ class FitnessLogsController < ApplicationController
 			flash[:success] = "Log Updates"
 		else
 			flash[:error] = "Failed to add log"
-			redirect_to log_user_path(current_user)
 		end
+		redirect_to log_user_path(current_user)
 	end
 
 	private
