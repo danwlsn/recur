@@ -4,7 +4,7 @@
 	<% end %>
 </div>
 <div class="unit one-of-two card goals--card">
-	<h2>Goals</h2>
+	<h2 class="card--header">Goals</h2>
 	<%= render "shared/goals" %>
 	<% if @user.goals.exists?(:user_id => @user.id, :complete => true) %>
 		<h2>Completed</h2>
