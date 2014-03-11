@@ -1,4 +1,12 @@
 $(document).ready(function(){
+
+if( !window.localStorage.isReturningVisitor) {
+	// do all the tour stuff here
+	$('.modal').css('display', 'block');
+	//window.localStorage.isReturningVisitor = true;
+}
+
+
 /****************************************
 *						$Select hiding on log form
 *****************************************/
