@@ -5,7 +5,7 @@ class FitnessLogsController < ApplicationController
 		# Builds enttry for current user
 		@fitness_log = current_user.fitness_logs.build(fitness_params)
 		if @fitness_log.save # if save
-			flash[:success] = "Log Updates"
+			flash[:success] = "Log Updated"
 		else
 			flash[:error] = "Failed to add log"
 		end
