@@ -12,6 +12,12 @@ class FitnessLogsController < ApplicationController
 		redirect_to log_user_path(current_user)
 	end
 
+	def destroy
+		@log = FitnessLog.find(params[:id]);
+		@log.destroy
+		redirect_to root_url
+	end
+
 	private
 
 	def fitness_params
