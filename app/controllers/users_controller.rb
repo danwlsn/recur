@@ -130,7 +130,14 @@ end
 		# Log variable for form
 		# If fitness log exists
 		@user = User.find(params[:id])
+		# If fitness log exists
 		if @user.fitness_logs.exists?(:user_id => @user.id)
+			# Get last entry
+			@lastGymVisit = @user.fitness_logs.last[:created_at]
+			# Get log - group by date
+			@fitnessLog = @user.fitness_logs.where("created_at >= ?", 1.week.ago.utc).order("created_at DESC").group_by { |log| log.created_at.strftime("%A %B #{log.created_at.day.ordinalize}") }
+
+			# List of activities for datalist
 			@activities = @user.fitness_logs.pluck(:activity).uniq
 			# Highcharts chart information
 			b = "Bench press"
