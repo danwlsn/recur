@@ -5,7 +5,7 @@
 </div>
 	<div class="card unit one-of-three weight--card">
 		<h2 class="card--header"><%=link_to(weight_user_path(current_user)) do %>
-			Weight<%= image_tag('link.png', class: "link") %>
+			Weight
 		<% end %></h2>
 		<%= render 'shared/show_weight' %>
 	</div> <!-- weight card -->
@@ -20,7 +20,7 @@
 
 	<div class="card unit one-of-three goals--card">
 		<h2 class="card--header"><%=link_to(goals_user_path(current_user)) do %>
-			Goals<%= image_tag('link.png', class: "link") %>
+			Goals
 		<% end %></h2>
 		<%= render 'shared/goals' %>
 	</div> <!-- goals card -->
@@ -28,7 +28,7 @@
 	<div class="unit one-of-six"></div>
 	<div class="card unit two-of-three log--card">
 		<h2 class="card--header"><%=link_to(log_user_path(current_user)) do %>
-			Fitness Log<%= image_tag('link.png', class: "link") %>
+			Fitness Log
 		<% end %></h2>
 		<% if @user.fitness_logs.where("created_at >= ?", 1.week.ago.utc).exists? %>
 			<% @fitnessLog.each do |date, logs| %>
