@@ -1,4 +1,5 @@
 class FitnessLogsController < ApplicationController
+	before_action :correct_user,  only: [:destroy]
 
 	# Create new fitness log entry
 	def create
@@ -23,6 +24,12 @@ class FitnessLogsController < ApplicationController
 
 	def fitness_params
 		params.require(:fitness_log).permit(:activity, :type, :time, :reps, :sets, :weight)
+	end
+
+	def correct_user
+		@user = User.find(current_user)
+		@log = FitnessLog.find(params[:id])
+		redirect_to(root_url) unless @log.user_id == @user.id
 	end
 
 end
