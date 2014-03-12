@@ -7,7 +7,7 @@
 	<h2>Update log</h2>
 	<%= form_for @fitness_log do |f| %>
 		<h3>Date</h3>
-		<%= f.date_field :created_at, :value => Time.now.strftime("%Y-%m-%d"), class: 'cardio general--input' %>
+		<%= f.date_field :created_at, :value => Time.now.strftime("%Y-%m-%d"), class: 'cardio general--input', 'required'=>'true' %>
 		<h3>Activity</h3>
 		<%= f.text_field :activity, list: 'activities', class: 'general--input' %>
 		<datalist id="activities">
