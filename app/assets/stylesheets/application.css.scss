@@ -529,12 +529,14 @@ form {
 			.delete {
 				float: right;
 				height:48px;
-				width:50px;
+				width:0;
 				background-color: $errorRed;
+				// color:#eee;
+				color:$lightblue;
 				font-size: 30px;
 				text-align: center;
-				display: none;
-				margin-right:-51px;
+				// display: none;
+				// margin-right:-51px;
 				cursor: pointer;
 				transition: all 0.2s ease-in-out;
 				-webkit-transition: all 0.2s ease-in-out;
@@ -548,7 +550,8 @@ form {
 		}
 		li:hover > .delete {
 			display: inline-block;
-			margin-right: 0;
+			// margin-right: 0;
+			width:50px;
 		}
 	}
 }
