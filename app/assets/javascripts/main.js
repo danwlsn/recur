@@ -1,9 +1,9 @@
 $(document).ready(function(){
 
-if( !window.localStorage.isReturningVisitor) {
+if(!window.localStorage.isReturningVisitor) {
 	// do all the tour stuff here
-	$('.modal').css('display', 'block');
-	//window.localStorage.isReturningVisitor = true;
+	$('.howto').html('<h2>Welcome. Click on the headers to edit the cards. Good luck, and have fun!</h2>');
+	window.localStorage.isReturningVisitor = true;
 }
 
 
