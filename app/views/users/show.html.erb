@@ -31,11 +31,12 @@
 				<ul>
 					<% logs.each do |log| %>
 						<li>
-						<%= log.activity %> -
+						<p class="delete">X</p>
+						<p class="activity"><%= log.activity %></p>
 						<% if log.type == "cardio" %>
-							<%= log.time %> mins
+							<p class="meta"><%= log.time %> mins</p>
 						<% else %>
-							<%= log.sets %>*<%= log.reps %> @ <%= log.weight %> <%= @weightFormat %>
+							<p class="meta"><%= log.sets %>*<%= log.reps %> @ <%= log.weight %> <%= @weightFormat %></p>
 						<% end %>
 						</li>
 					<% end %>
