@@ -531,8 +531,6 @@ form {
 				height:48px;
 				width:0;
 				background-color: $errorRed;
-				// color:#eee;
-				color:$lightblue;
 				font-size: 30px;
 				text-align: center;
 				// display: none;
@@ -540,6 +538,13 @@ form {
 				cursor: pointer;
 				transition: all 0.2s ease-in-out;
 				-webkit-transition: all 0.2s ease-in-out;
+
+				a {
+					color:$lightblue;
+				}
+				a:hover {
+					text-decoration: none;
+				}
 			}
 			p{
 				margin: 0;

@@ -16,6 +16,7 @@ class FitnessLogsController < ApplicationController
 		@log = FitnessLog.find(params[:id]);
 		@log.destroy
 		redirect_to root_url
+		flash[:success] = "Removed from fitness log"
 	end
 
 	private

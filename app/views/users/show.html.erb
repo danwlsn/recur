@@ -1,3 +1,8 @@
+	<div class="unit span-grid flash">
+	<% flash.each do |key, value| %>
+		<%= render :partial => 'layouts/flash', :locals => {:flash => flash} %>
+	<% end %>
+</div>
 	<div class="card unit one-of-three weight--card">
 		<h2 class="card--header"><%=link_to(weight_user_path(current_user)) do %>
 			Weight<%= image_tag('link.png', class: "link") %>
