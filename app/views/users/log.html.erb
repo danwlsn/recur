@@ -6,6 +6,8 @@
 <div class="unit span-grid card log--card">
 	<h2>Update log</h2>
 	<%= form_for @fitness_log do |f| %>
+		<h3>Date</h3>
+		<%= f.date_field :created_at, :value => Time.now.strftime("%Y-%m-%d"), class: 'cardio general--input' %>
 		<h3>Activity</h3>
 		<%= f.text_field :activity, list: 'activities', class: 'general--input' %>
 		<datalist id="activities">
@@ -17,7 +19,7 @@
 		</datalist>
 		<h3>Type</h3>
 		<%= select :fitness_log, :type, [ ["Cardio",'cardio'], ["Strength",'strength']], class: 'choice select' %>
-	<h3 class="cardio">Time (minutes)</h3>
+		<h3 class="cardio">Time (minutes)</h3>
 		<%= f.text_field :time, value: 0, class: 'cardio general--input' %>
 		<h3 class="strength">Reps</h3>
 		<%= f.text_field :reps, value: 0, class: 'strength general--input' %>

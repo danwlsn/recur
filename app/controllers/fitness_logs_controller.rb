@@ -23,7 +23,7 @@ class FitnessLogsController < ApplicationController
 	private
 
 	def fitness_params
-		params.require(:fitness_log).permit(:activity, :type, :time, :reps, :sets, :weight)
+		params.require(:fitness_log).permit(:created_at, :activity, :type, :time, :reps, :sets, :weight)
 	end
 
 	def correct_user

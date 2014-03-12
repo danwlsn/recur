@@ -682,6 +682,7 @@ input[type="radio"] {
 	}
 
 	.form {
+
 		input {
 			width:100%;
 			-webkit-transition:all 0.2s;
@@ -689,6 +690,10 @@ input[type="radio"] {
 			-o-transition:all 0.2s;
 			-ms-transition:all 0.2s;
 			transition:all 0.2s;
+		}
+		input[type=date]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		display: none;
 		}
 		h2 {
 			font-weight: 200;
