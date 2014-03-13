@@ -2,6 +2,7 @@ class OptionController < ApplicationController
 
 	def update
 		current_user.option.update_attributes(option_params)
+		flash[:success] = "Weight format updated" # Flash messages
 		redirect_to edit_user_path(current_user)
 	end
 
