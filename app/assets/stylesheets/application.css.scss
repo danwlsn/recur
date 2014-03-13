@@ -651,14 +651,16 @@ input[type="radio"] {
 	font-weight: 100;
 	width:100%;
 	padding:0.5em 0;
-	background-color: red;
+	background-color: $errorRed;
 	color:#fff;
 	border: 0 none;
 	margin-bottom: 1.5em;
 }
 .delete--button:hover {
-	background-color:$blue;
-	color: red;
+	background-color:#A62320;
+}
+.delete--button:visited {
+	color:#fff;
 }
 
 @media all and (max-width: 699px) {
