@@ -1,20 +1,31 @@
 Fitness::Application.routes.draw do
 
+	# Root path
 	root 'users#index'
 
+	# Static routes
 	get '/about', to: 'static#about'
 	get '/contact', to: 'static#contact'
 
+	# Users resources
 	resources :users do
 		member do
-			get :weight
-			get :log
-			get :goals
-			get :admin
+			get :weight # Weight view
+			get :log # Log view
+			get :goals # Goal view
+			get :admin # Admin view
 		end
 	end
-	get '/signup', to: 'users#new'
 
+	# Signup route
+	get '/signup', to: 'users#new'
+	# Signin route
+	get '/signin', to: 'sessions#new'
+	# Signout route
+	delete '/signout', to: 'sessions#destroy'
+	resources :sessions, only: [:new, :create, :destroy]
+
+	# Route for creating user things
 	resources :current_weights, only: [:create, :destroy]
 	resources :goal_weights, only: [:create, :destroy]
 	resources :fitness_logs, only: [:create, :destroy]
@@ -26,9 +37,5 @@ Fitness::Application.routes.draw do
 			get :complete, :via => :post
 		end
 	end
-
-	resources :sessions, only: [:new, :create, :destroy]
-	get '/signin', to: 'sessions#new'
-	delete '/signout', to: 'sessions#destroy'
 
 end
