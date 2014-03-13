@@ -191,7 +191,7 @@ class UsersController < ApplicationController
 		if !userAdmin?(current_user)
 			redirect_to root_path
 		end
-		@users = User.all
+		@users = User.all.order("created_at DESC")
 	end
 
 	private
