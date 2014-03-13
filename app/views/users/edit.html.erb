@@ -19,6 +19,9 @@
 			<%= f.password_field :password, placeholder: "Password", class: "general--input" %>
 			<%= f.password_field :password_confirmation, placeholder: "Confirm password", class: "general--input" %>
 			<%= f.submit "Save changes", class: "submit--button" %>
+
+			<h2>Delete account</h2>
+			<%= link_to "Delete", user_path(current_user), :confirm => 'Are you sure?', :method => :delete , class: "delete--button"%>
 		<% end %>
 	</div>
 </div>
