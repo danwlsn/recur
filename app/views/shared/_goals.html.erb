@@ -6,7 +6,7 @@
 				<label for="<%= g.id %>"><%= g.goal %></label>
 			</li>
 	<% end %>
-	<% @user.goals.where("complete = ? AND created_at >= ?", true, 2.week.ago.utc).order("created_at DESC").each do |g| %>
+	<% @user.goals.where("complete = ? AND updated_at >= ?", true, 2.week.ago.utc).order("created_at DESC").each do |g| %>
 				<li>
 					<label class="strike--red" for="<%= g.id %>"><%= g.goal %></label>
 				</li>
