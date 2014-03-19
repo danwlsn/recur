@@ -584,6 +584,33 @@ form {
 	form {
 		width: 90%;
 	}
+
+	.log--card {
+		ul {
+			li {
+				height:auto;
+				margin-bottom: 1px;
+				.activity,
+				.meta {
+					display: block;
+					padding-left:0.5rem;
+					line-height: 1.2em;
+				}
+				.activity {
+
+				}
+				.meta {
+					float: none;
+				}
+				.delete {
+					display: inline-block;
+					width:50px;
+					height:49px;
+					z-index: 999;
+				}
+			}
+		}
+	}
 }
 
 /****************************************
