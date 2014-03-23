@@ -1,15 +1,14 @@
 $(document).ready(function(){
 
-if(!window.localStorage.isReturningVisitor) {
-	// do all the tour stuff here
-	$('.howto').html('<h2>Welcome. Click on the headers to edit the cards. Good luck, and have fun!</h2>');
-	window.localStorage.isReturningVisitor = true;
-}
+
+// // Display message to first time users
+// if(!window.localStorage.isReturningVisitor) {
+// 	$('.howto').html('<h2>Welcome. Click on the headers to edit the cards. Good luck, and have fun!</h2>');
+// 	window.localStorage.isReturningVisitor = true;
+// }
 
 
-/****************************************
-*						$Select hiding on log form
-*****************************************/
+	// Select hiding on log form
 	// Set strength inputs to none
 	$('.strength').css('display', 'none');
 	// On select change..
@@ -51,29 +50,34 @@ if(!window.localStorage.isReturningVisitor) {
 		$('.completed--goals').slideToggle();
 	})
 
-	// Tab bar
+	// Fitness log charts
+	// Hide charts
 	$('#dead--chart').css('display', 'none');
 	$('#squat--chart').css('display', 'none');
+	// On tab click
 	$('.tab').on("click", function(){
-		$(window).trigger('resize');
-		$('.tab').removeClass('selected');
-		$(this).addClass('selected');
-		var choice = $(this).html();
+		$(window).trigger('resize'); // trigger resize to fix chart bugg
+		$('.tab').removeClass('selected'); // Remove seleted class from all tabs
+		$(this).addClass('selected'); // Apply selected class to click tab
+		var choice = $(this).html(); // Get tab selected HTML
 
-		if (choice == "Bench press")
+		if (choice == "Bench press") // If bench press
 		{
+			// Show bench press chart, hide others
 			$('#bench--chart').css('display', 'block');
 			$('#dead--chart').css('display', 'none');
 			$('#squat--chart').css('display', 'none');
 		}
-		else if (choice == "Deadlift")
+		else if (choice == "Deadlift") // If deadlift
 		{
+			// Show deadlift chart, hide others
 			$('#bench--chart').css('display', 'none');
 			$('#dead--chart').css('display', 'block');
 			$('#squat--chart').css('display', 'none');
 		}
-		else
+		else // Else squat
 		{
+			// Show squat chart, hide others
 			$('#bench--chart').css('display', 'none');
 			$('#dead--chart').css('display', 'none');
 			$('#squat--chart').css('display', 'block');

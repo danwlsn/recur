@@ -34,27 +34,7 @@
 	<h2 class="card--header"><%=link_to(log_user_path(current_user)) do %>
 		Fitness Log
 	<% end %></h2>
-	<% if @user.fitness_logs.where("created_at >= ?", 1.week.ago.utc).exists? %>
-		<% @fitnessLog.each do |date, logs| %>
-			<p class="date"><%= date %></p>
-			<ul>
-				<% logs.each do |log| %>
-					<li>
-					<p class="delete"><%= link_to 'X', fitness_log_path(log.id),
-          :confirm => 'Are you sure?', :method => :delete %></p>
-					<p class="activity"><%= log.activity %></p>
-					<% if log.type == "cardio" %>
-						<p class="meta"><%= log.time %> mins</p>
-					<% else %>
-						<p class="meta"><%= log.sets %>*<%= log.reps %> @ <%= log.weight %> <%= @weightFormat %></p>
-					<% end %>
-					</li>
-				<% end %>
-			</ul>
-		<% end %>
-	<% else %>
-		<h2>Get to the gym!</h2>
-	<% end %>
+	<%= render 'shared/log' %>
 </div> <!-- log card -->
 <div class="unit span-grid card log--analysis">
 	<div class="tab--bar">

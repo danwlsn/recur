@@ -5,15 +5,15 @@ class SessionsController < ApplicationController
 	# Create new session
 	def create
 		# Find user by email entered
-	  user = User.find_by(email: params[:session][:email].downcase)
-	  # If password and email match
-	  if user && user.authenticate(params[:session][:password])
-	    sign_in user # sign user in
-      redirect_to user # redirect to user
-	  else
-	  	flash[:error] = "Email and password combination incorrect"
-	    render 'new' # else bounce them back to sign in
-	  end
+		user = User.find_by(email: params[:session][:email].downcase)
+		# If password and email match
+		if user && user.authenticate(params[:session][:password])
+			sign_in user # sign user in
+			redirect_to user # redirect to user
+		else
+			flash[:error] = "Email and password combination incorrect"
+			render 'new' # else bounce them back to sign in
+		end
 	end
 
 	# Destroy session

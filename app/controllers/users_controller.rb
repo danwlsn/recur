@@ -196,19 +196,19 @@ class UsersController < ApplicationController
 
 	private
 
-		# Params from forms
-		def user_params
-			params.require(:user).permit(:name, :email, :password, :password_confirmation)
-		end
-
-		# Bounce user to sign in if not signed in
-		def signed_in_user
-			redirect_to signin_url, notice: "Please sign in." unless signed_in?
-		end
-
-		# Bounce user to root if not correct user
-		def correct_user
-			@user = User.find(params[:id])
-			redirect_to(root_url) unless current_user?(@user) || userAdmin?(current_user)
-		end
+	# Params from forms
+	def user_params
+		params.require(:user).permit(:name, :email, :password, :password_confirmation)
 	end
+
+	# Bounce user to sign in if not signed in
+	def signed_in_user
+		redirect_to signin_url, notice: "Please sign in." unless signed_in?
+	end
+
+	# Bounce user to root if not correct user
+	def correct_user
+		@user = User.find(params[:id])
+		redirect_to(root_url) unless current_user?(@user) || userAdmin?(current_user)
+	end
+end
