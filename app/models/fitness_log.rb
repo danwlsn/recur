@@ -1,10 +1,10 @@
 class FitnessLog < ActiveRecord::Base
 
 	validates :activity, presence: true
-	validates :time, presence: true
-	validates :reps, presence: true
-	validates :sets, presence: true
-	validates :weight, presence: true
+	validates :time, presence: true, numericality: true
+	validates :reps, presence: true, numericality: true
+	validates :sets, presence: true, numericality: true
+	validates :weight, presence: true, numericality: true
 
 	self.inheritance_column = nil
 
