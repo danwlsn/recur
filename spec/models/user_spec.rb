@@ -8,6 +8,7 @@ describe User do
 	it { should respond_to(:name) }
 	it { should respond_to(:email) }
 	it { should respond_to(:password_digest) }
+	it { should respond_to(:access) }
 
 	it { should be_valid }
 
@@ -58,5 +59,9 @@ describe User do
 			it { should_not eq user_for_invalid_password }
 			specify { expect(user_for_invalid_password).to be_false }
 		end
+	end
+
+	describe "access default to 0" do
+		its(:access){should eq 0}
 	end
 end

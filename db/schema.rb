@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140305095326) do
+ActiveRecord::Schema.define(version: 20140330162736) do
 
   create_table "current_weights", force: true do |t|
     t.integer  "user_id"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20140305095326) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.integer  "access"
+    t.integer  "access",          default: 0, null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
