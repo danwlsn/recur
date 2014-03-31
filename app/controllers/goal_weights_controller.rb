@@ -5,14 +5,14 @@ class GoalWeightsController < ApplicationController
 		# Build entry for current users
 		@goal_weight = current_user.goal_weights.build(weight_params)
 		if @goal_weight.save # If save
-			flash[:success] = "Weight updated"
+			flash.now[:success] = "Weight updated"
 			respond_to do |format|
 				format.html { redirect_to current_user }
 				format.js
 			end
 		else
 			respond_to do |format|
-				flash[:error] = "Failed to add weight"
+				flash.now[:error] = "Failed to add weight"
 				format.html { redirect_to current_user }
 				format.js
 			end

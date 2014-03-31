@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 			sign_in user # sign user in
 			redirect_to user # redirect to user
 		else
-			flash[:error] = "Email and password combination incorrect"
+			flash.now[:error] = "Email and password combination incorrect"
 			render 'new' # else bounce them back to sign in
 		end
 	end
