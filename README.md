@@ -9,11 +9,11 @@ It's built using Ruby on Rails.
 **Requires Ruby 2.0.0**
 
 Running these commands from the command line should get you up and running
-    git clone https://github.com/wilsonand1/recur.git
-    cd recur
-    bundle install --without production
-    rake db:migrate
-    rails s
+```git clone https://github.com/wilsonand1/recur.git
+cd recur
+bundle install --without production
+rake db:migrate
+rails s```
 
 Then point your browser to `http://localhost:3000` and enjoy.
 
