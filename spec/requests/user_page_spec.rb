@@ -178,5 +178,44 @@ describe "User pages" do
 				end
 			end
 		end
+
+		describe "log page" do
+			before do
+				visit log_user_path(user)
+			end
+
+			it { should have_content("Update log") }
+
+			describe "add logs" do
+				describe "with valid information" do
+					describe "cardio entry" do
+						before do
+							fill_in "fitness_log_activity", with: "Cycling"
+							select "Cardio", from: "fitness_log_activity"
+							fill_in "fitness_log_time",     with: 120
+							click_button "Submit"
+						end
+
+						it {should have_content("Log Updated")}
+						it {should have_content("Cycling")}
+						it {should have_content("120")}
+					end
+
+					describe "strength entry" do
+						before do
+							fill_in "fitness_log_activity", with: "Bench Press"
+							select "Strength", from: "fitness_log_activity"
+							fill_in "fitness_log_reps",     with: 6
+							fill_in "fitness_log_sets",     with: 6
+							fill_in "fitness_log_weight",     with: 60
+							click_button "Submit"
+						end
+
+						it {should have_content("Log Updated")}
+						it {should have_content("Bench Press")}
+						it {should have_content("60")}
+					end
+				end
+			end
 	end
 end
