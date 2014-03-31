@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 			@options = @user.create_option(:weight => 'lbs')
 			@options.save
 			sign_in(@user) # sign user in
-			flash.now[:success] = "Welcome, add your weights to get started!"
+			flash[:success] = "Welcome, add your weights to get started!"
 			redirect_to weight_user_path(@user) # bounce them to their page
 		else
 			flash.now[:error] = "There was a problem signing you up"
@@ -89,11 +89,10 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		# If update success
 		if @user.update_attributes(user_params)
-			flash.now[:success] = "Informtion updated" # Flash messages
+			flash[:success] = "Informtion updated" # Flash messages
 			redirect_to @user # Redirect to their pages
 		else
-			flash.now[:error] = "Inccorect email or password" # Flash error
-			# render 'edit' # Show edit page again
+			flash[:error] = "Inccorect email or password" # Flash error
 			redirect_to edit_user_path(@user)
 		end
 	end

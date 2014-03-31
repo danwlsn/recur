@@ -6,9 +6,9 @@ class FitnessLogsController < ApplicationController
 		# Builds enttry for current user
 		@fitness_log = current_user.fitness_logs.build(fitness_params)
 		if @fitness_log.save # if save
-			flash.now[:success] = "Log Updated"
+			flash[:success] = "Log Updated"
 		else
-			flash.now[:error] = "Failed to add log"
+			flash[:error] = "Failed to add log"
 		end
 		redirect_to log_user_path(current_user)
 	end
@@ -16,8 +16,8 @@ class FitnessLogsController < ApplicationController
 	def destroy
 		@log = FitnessLog.find(params[:id]);
 		@log.destroy
+		flash[:success] = "Removed from fitness log"
 		redirect_to root_url
-		flash.now[:success] = "Removed from fitness log"
 	end
 
 	private

@@ -4,12 +4,16 @@ class GoalsController < ApplicationController
 		@goal = current_user.goals.build(goal_params)
 		if @goal.save # If save
 			respond_to do |format|
-				flash.now[:success] = "Goal added"
-				format.html { redirect_to goals_user_path(current_user) }
-				format.js
+				format.html {
+					flash[:success] = "Goal added"
+					redirect_to goals_user_path(current_user)
+				}
+				format.js {
+					flash.now[:success] = "Goal added"
+				}
 			end
 		else
-			flash.now[:error] = "Failed to add goal"
+			flash[:error] = "Failed to add goal"
 			redirect_to goals_user_path(current_user)
 		end
 	end
@@ -19,7 +23,6 @@ class GoalsController < ApplicationController
 
 	def complete
 		@goal = Goal.find(params[:id])
-
 		@goal.update_attributes(:complete => true)
 		redirect_to root_path
 	end
