@@ -191,7 +191,7 @@ describe "User pages" do
 					describe "cardio entry" do
 						before do
 							fill_in "fitness_log_activity", with: "Cycling"
-							select "Cardio", from: "fitness_log_activity"
+							select "Cardio", from: "fitness_log_type"
 							fill_in "fitness_log_time",     with: 120
 							click_button "Submit"
 						end
@@ -204,10 +204,10 @@ describe "User pages" do
 					describe "strength entry" do
 						before do
 							fill_in "fitness_log_activity", with: "Bench Press"
-							select "Strength", from: "fitness_log_activity"
+							select "Strength",              from: "fitness_log_type"
 							fill_in "fitness_log_reps",     with: 6
 							fill_in "fitness_log_sets",     with: 6
-							fill_in "fitness_log_weight",     with: 60
+							fill_in "fitness_log_weight",   with: 60
 							click_button "Submit"
 						end
 
@@ -215,7 +215,37 @@ describe "User pages" do
 						it {should have_content("Bench Press")}
 						it {should have_content("60")}
 					end
+
+					describe "wight invaid information" do
+						before {click_button "Submit"}
+
+						it {should have_content("Failed to add log")}
+					end
 				end
 			end
+		end
+	end
+
+	describe "admin page" do
+		let(:user) { FactoryGirl.create(:user) }
+		before { sign_in user }
+
+		describe "if admin" do
+			before do
+				visit admin_user_path(user)
+			end
+
+			it {should have_content("Admin")}
+		end
+
+		describe "if not admin" do
+			before do
+				user.access = 0
+				user.save!
+				visit admin_user_path(user)
+			end
+
+			it {should_not have_content("Admin")}
+		end
 	end
 end

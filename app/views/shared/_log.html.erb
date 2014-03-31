@@ -5,7 +5,7 @@
 			<% logs.each do |log| %>
 				<li>
 				<p class="delete"><%= link_to 'X', fitness_log_path(log.id),
-				:confirm => 'Are you sure?', :method => :delete %></p>
+				:data => {:confirm => 'Are you sure?'}, :method => :delete %></p>
 				<p class="activity"><%= log.activity %></p>
 				<% if log.type == "cardio" %>
 					<p class="meta"><%= log.time %> mins</p>
