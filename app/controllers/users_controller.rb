@@ -149,9 +149,10 @@ class UsersController < ApplicationController
 			b = "Bench press"
 			d = "Deadlift"
 			s = "Squat"
-			@bench_array = @user.fitness_logs.find(:all, :conditions => ["lower(activity) = ?", b.downcase]).map{|x| [x.created_at.to_s(:short), x.weight]}
-			@deadlift_array = @user.fitness_logs.find(:all, :conditions => ["lower(activity) = ?", d.downcase]).map{|x| [x.created_at.to_s(:short), x.weight]}
-			@squat_array = @user.fitness_logs.find(:all, :conditions => ["lower(activity) = ?", s.downcase]).map{|x| [x.created_at.to_s(:short), x.weight]}
+			# @bench_array = @user.fitness_logs.find(:all, :conditions => ["lower(activity) = ?", b.downcase]).map{|x| [x.created_at.to_s(:short), x.weight]}
+			@bench_array = @user.fitness_logs.where("lower(activity) = ?", b.downcase).map{|x| [x.created_at.to_s(:short), x.weight]}
+			@deadlift_array = @user.fitness_logs.where("lower(activity) = ?", d.downcase).map{|x| [x.created_at.to_s(:short), x.weight]}
+			@squat_array = @user.fitness_logs.where("lower(activity) = ?", s.downcase).map{|x| [x.created_at.to_s(:short), x.weight]}
 
 			# Create charts
 			@bench_chart = LazyHighCharts::HighChart.new('graph') do |f|
