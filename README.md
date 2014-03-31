@@ -22,6 +22,9 @@ Then point your browser to `http://localhost:3000` and enjoy.
 
 # Running tests
 Test are run using Rspec. To run tests use the command
-    rspec spec/
+
+```
+rspec spec/
+````
 
 All of the test should now run and pass.
