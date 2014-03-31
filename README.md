@@ -10,9 +10,13 @@ It's built using Ruby on Rails.
 
 Running these commands from the command line should get you up and running
 ```git clone https://github.com/wilsonand1/recur.git
+
 cd recur
+
 bundle install --without production
+
 rake db:migrate
+
 rails s```
 
 Then point your browser to `http://localhost:3000` and enjoy.
