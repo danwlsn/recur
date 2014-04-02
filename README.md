@@ -6,7 +6,8 @@ It's built using Ruby on Rails.
 
 
 # Installation
-**Requires Ruby 2.0.0**
+**Requires Ruby 2.0.0, [RubyGems](http://rubygems.org/pages/download), and the [Bundler](http://bundler.io/#getting-started) gem**
+
 
 Running these commands from the command line should get you up and running
 
