@@ -61,7 +61,7 @@ $(document).ready(function(){
 		$(this).addClass('selected'); // Apply selected class to click tab
 		var choice = $(this).html(); // Get tab selected HTML
 
-		if (choice == "Bench press") // If bench press
+		if (choice == "Bench") // If bench press
 		{
 			// Show bench press chart, hide others
 			$('#bench--chart').css('display', 'block');
