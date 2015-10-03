@@ -1,4 +1,4 @@
-# Fitness application - [recur](http://recurapp.co)
+# Fitness application - [recur](https://recur.herokuapp.com/)
 
 # Overview
 Here is the source code for the fitness monitoring application recur.
